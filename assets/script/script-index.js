@@ -8,8 +8,6 @@ let copiaHome=document.createElement("div")//variabile che copia la homepage da 
 let container=document.getElementById("homepage")
 
 
-
-
 async function renderApi(url){
      const response = await fetch(urlApi+url,{
         method: 'GET',
