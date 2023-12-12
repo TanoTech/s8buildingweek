@@ -208,6 +208,8 @@ async function cercaArtista(id) {
     document.getElementById("albumplaylist").classList.add("d-none");
     document.getElementById("artist").classList.remove("d-none");
 
+    let randomLikes = Math.round(Math.random() * 99) +  1;
+
     const artistData = await renderApi("artist/" + id);
     const artistName = artistData.name;
     const artistFans = artistData.nb_fan;
@@ -216,10 +218,12 @@ async function cercaArtista(id) {
     const artistNameElement = document.getElementById('artist-name');
     const artistFansElement = document.getElementById('artist-fans');
     const artistImageElement = document.getElementById('artist-image');
+    const userLikedSongs = document.getElementById('randomLike')
     
     artistNameElement.textContent = artistName;
     artistFansElement.textContent = `${artistFans} ascoltatori mensili`;
     artistImageElement.src = artistImageURL;
+    userLikedSongs.textContent = `Hai messo mi piace a ${randomLikes} canzoni`
 
     const artistAlbums = await renderApi("artist/" + id + "/albums");
 
