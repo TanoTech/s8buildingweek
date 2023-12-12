@@ -58,11 +58,6 @@ async function playlistPopola(){
 }
 //crea il Visualizza Tutto
 
-
-
-
-
-
 function viewMore(i,titolo){
     let numrandom=Math.floor(Math.random()*4)
     if(numrandom==i)
@@ -119,7 +114,6 @@ async function caricaPlaylist(numPlaylist) {
     document.getElementById("albumplaylist").classList.remove("d-none")
 
 }
-
 
 function displayTitoli(items) {
 	let titoliWrapper = document.getElementById("titoli");
@@ -195,15 +189,12 @@ async function cercaMp3(url){
     creaPlayer.innerHTML=`<audio controls>
     <source id="mp3" src="${mp3.preview}" type="audio/mp3">
   </audio>`
-    container.appendChild(creaPlayer)
-    
-    
-
+    container.appendChild(creaPlayer) 
 }
+
 function avviaMp3(){
 
 }
-
 
 async function cercaArtista(id){
     svuotaHome()
@@ -219,7 +210,21 @@ async function cercaArtista(id){
     artistNameElement.textContent = artistName
     artistFansElement.textContent = `Follower: ${artistFans}`
     artistImageElement.src = artistImageURL
-    /*const artistId = artistData.id;
-    const albumLimit = 8;*/
+    
+    displayArtistAlbums(artistaAlbum.data)
 
+}
+
+function displayArtistAlbums(albums) {
+    const artistAlbumsElement = document.getElementById('artist-albums');
+    artistAlbumsElement.innerHTML = '';
+
+    albums.forEach((album) => {
+        const albumElement = document.createElement('div');
+        albumElement.innerHTML = `
+            <img src="${album.cover_medium}" alt="${album.title}" />
+            <h3>${album.title}</h3>
+        `;
+        artistAlbumsElement.appendChild(albumElement);
+    });
 }
