@@ -190,8 +190,17 @@ async function cercaMp3(url){
     {
         alert("Canzone non presente nel database")
     }
-    //avviaMp3(mp3.preview)
     console.log(mp3.preview)
+    let creaPlayer=document.createElement("div")
+    creaPlayer.innerHTML=`<audio controls>
+    <source id="mp3" src="${mp3.preview}" type="audio/mp3">
+  </audio>`
+    container.appendChild(creaPlayer)
+    
+    
+
+}
+function avviaMp3(){
 
 }
 
