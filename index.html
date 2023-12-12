@@ -495,14 +495,16 @@
         <div id="artist" class="d-none ">
             <div id="artist-info">
                 <div id="verifiedArtist">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-patch-check-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
-                    </svg>
-                    <p>Aritsta verificato</p>
-                    <p id="artist-name"></p>
-                    <p id="artist-fans"></p>
+                   <div class="d-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue"
+                            class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
+                        </svg>
+                        <p class='text-white'>Aritsta verificato</p>
+                   </div>
+                    <h1 class="display-1 text-white" id="artist-name"></h1>
+                    <p class="text-white" id="artist-fans"></p>
                 </div>
                 <div id="artistPlay">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green"
@@ -510,7 +512,7 @@
                         <path
                             d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5" />
                     </svg>
-                    <p>Following</p>
+                    <button class="btn btn-outline-light ms-4 me-2"><small class="fw-bold">FOLLOWING</small></button>
                     <p>...</p>
                 </div>
                 <div id="popularSongArtist">

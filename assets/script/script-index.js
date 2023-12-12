@@ -226,21 +226,6 @@ async function cercaArtista(id) {
     userLikedSongs.textContent = `Hai messo mi piace a ${randomLikes} canzoni`
 
     const artistAlbums = await renderApi("artist/" + id + "/albums");
-
-    displayArtistAlbums(artistAlbums.data);
 }
 
-function displayArtistAlbums(albums) {
-    const artistAlbumsElement = document.getElementById('artist-albums');
-    artistAlbumsElement.innerHTML = '';
-
-    albums.forEach((album) => {
-        const albumElement = document.createElement('div');
-        albumElement.innerHTML = `
-            <img src="${album.cover_medium}" alt="${album.title}" />
-            <h3>${album.title}</h3>
-        `;
-        artistAlbumsElement.appendChild(albumElement);
-    });
-}
 
