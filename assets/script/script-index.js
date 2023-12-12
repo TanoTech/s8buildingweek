@@ -203,21 +203,40 @@ function avviaMp3(){
 }
 
 
-async function cercaArtista(id){
-    svuotaHome()
-    document.getElementById("albumplaylist").classList.add("d-none")
-    document.getElementById("artist").classList.remove("d-none")
-    const artistData = await renderApi("artist/"+id)
-    const artistName = artistData.name
-    const artistFans = artistData.nb_fan
-    const artistImageURL = artistData.picture
-    const artistNameElement = document.getElementById('artist-name')
-    const artistFansElement = document.getElementById('artist-fans')
-    const artistImageElement = document.getElementById('artist-image')
-    artistNameElement.textContent = artistName
-    artistFansElement.textContent = `Follower: ${artistFans}`
-    artistImageElement.src = artistImageURL
-    /*const artistId = artistData.id;
-    const albumLimit = 8;*/
+async function cercaArtista(id) {
+    svuotaHome();
+    document.getElementById("albumplaylist").classList.add("d-none");
+    document.getElementById("artist").classList.remove("d-none");
 
+    const artistData = await renderApi("artist/" + id);
+    const artistName = artistData.name;
+    const artistFans = artistData.nb_fan;
+    const artistImageURL = artistData.picture;
+
+    const artistNameElement = document.getElementById('artist-name');
+    const artistFansElement = document.getElementById('artist-fans');
+    const artistImageElement = document.getElementById('artist-image');
+    
+    artistNameElement.textContent = artistName;
+    artistFansElement.textContent = `${artistFans} ascoltatori mensili`;
+    artistImageElement.src = artistImageURL;
+
+    const artistAlbums = await renderApi("artist/" + id + "/albums");
+
+    displayArtistAlbums(artistAlbums.data);
 }
+
+function displayArtistAlbums(albums) {
+    const artistAlbumsElement = document.getElementById('artist-albums');
+    artistAlbumsElement.innerHTML = '';
+
+    albums.forEach((album) => {
+        const albumElement = document.createElement('div');
+        albumElement.innerHTML = `
+            <img src="${album.cover_medium}" alt="${album.title}" />
+            <h3>${album.title}</h3>
+        `;
+        artistAlbumsElement.appendChild(albumElement);
+    });
+}
+
