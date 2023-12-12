@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page spotify</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="../script-index.js" defer></script>
+    <link rel="stylesheet" href="../style-index.css">
+</head>
+
+<body>
+    <!-- NAV <div>
+            <div class="d-flex justify-content-between">
+             <div id="icone" class="d-flex ">  
+              <div class="ms-3 my-3">
+               <i class="bi bi-arrow-left-circle  h2"></i>
+              </div>
+             <div class="ms-2 my-3">
+               <i class="bi bi-arrow-right-circle  h2"></i>
+             </div>
+                 </div>
+     
+             <div id="profile" class="mx-1 bg-secondary rounded p-1 mx-3 my-3">
+               <li class="nav-item dropdown">
+                 <a
+                   class="nav-link dropdown-toggle"
+                   href="#"
+                   role="button"
+                   data-bs-toggle="dropdown"
+                   aria-expanded="false"
+                 >
+                   <img src="assets/meme_this_is_fine_dog.png" width="32" class="rounded" alt="">
+                   Profile
+                 </a>
+                 <ul class="dropdown-menu bg-black">
+                   <li class="d-flex justify-content-between align-items-center">
+                     <a class="dropdown-item text-white" href="#"
+                       >Account 
+                     </a><i class="bi bi-box-arrow-up-right text-white"></i>
+                   </li class=>
+                   <li><a class="dropdown-item text-white" href="#">Profilo</a></li>
+                   <li class="d-flex justify-content-between align-items-center">
+                     <a class="dropdown-item text-white" href="#"
+                       >Effettua l'upgrade a Premium 
+                     </a>
+                     <i class="bi bi-box-arrow-up-right text-white"></i>
+                   </li>
+                   <li>
+                     <a class="dropdown-item text-white" href="#">Sessione privata</a>
+                   </li>
+                   <li>
+                     <a class="dropdown-item text-white" href="#">Impostazioni</a>
+                   </li>
+                   <hr />
+                   <li>
+                     <a class="dropdown-item text-white" href="#">Esci</a>
+                   </li>
+                 </ul>
+               </li>
+             </div>
+           </div>
+         </div> -->
+
+
+
+    <div id="homepage" class="container ">
+        <div>
+            <img src="" alt="" srcset="">
+            <div id="sponsored">
+                <h1></h1>
+                <h4></h4>
+                <h4></h4>
+                <input type="button" value="PLAY">
+                <input type="button" value="SALVA">
+                <img src="" alt="" srcset="">
+            </div>
+        </div>
+        <div>
+            <h2></h2>
+            <div id="playlistCard" class="row justify-content-center align-items-center g-2">
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                </div>
+                <div class="col-4">
+                </div>
+            </div>
+
+
+
+        </div>
+        <div>
+            <div class="d-flex justify-content-between align-items-baseline ">
+                <h3>Novità</h3>
+                <p onclick="viewMore(0,`Novità`)">VISUALIZZA TUTTO</p>
+            </div>
+            <div id="playlist0" class=" row justify-content-center align-items-center g-2">
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-1.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Title</h4>
+                            <p class="card-text">Text</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-2.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">La tua estate è un film</h4>
+                            <p class="card-text">Playlist estiva</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-3.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Massima concentrazione</h4>
+                            <p class="card-text">Playlist per studiare</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-4.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Peaceful Piano</h4>
+                            <p class="card-text">Playlist piano</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-5.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">lofi beats</h4>
+                            <p class="card-text">Playlist lofi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <div class="d-flex justify-content-between align-items-baseline ">
+                <h3>Altro di ciò che ti piace</h3>
+                <p onclick="viewMore(1,`Altro di ciò che ti piace`)">VISUALIZZA TUTTO</p>
+            </div>
+            <div id="playlist1" class="row justify-content-center align-items-center g-2">
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-6.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Jazz Vibes</h4>
+                            <p class="card-text">Playlist jazz</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-7.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Caffè del buongiorno</h4>
+                            <p class="card-text">Playlist mattutina</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-8.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Sanguegiovane</h4>
+                            <p class="card-text">Text</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-9.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Canta sotto la doccia</h4>
+                            <p class="card-text">Playlist che ti dà la carica</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-10.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Operazione buonumore</h4>
+                            <p class="card-text">Playlist divertente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <div class="d-flex justify-content-between align-items-baseline ">
+                <h3>Creato per te</h3>
+                <p onclick="viewMore(2,`Creato per te`)">VISUALIZZA TUTTO</p>
+            </div>
+            <div id="playlist2" class="row justify-content-center align-items-center g-2">
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-11.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Mercury</h4>
+                            <p class="card-text">Imagine Dragons</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-12.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Respira</h4>
+                            <p class="card-text">Samurai Jay</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-13.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Pulizie di Casa</h4>
+                            <p class="card-text">Playlist per Pulire</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-14.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Allenamento a Casa</h4>
+                            <p class="card-text">Playlist Allenamento</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-15.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Casa Dolce Casa</h4>
+                            <p class="card-text">Playlist Chill</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <div class="d-flex justify-content-between align-items-baseline ">
+                <h3>Migliori Playlist</h3>
+                <p onclick="viewMore(3,`Migliori Playlist`)">VISUALIZZA TUTTO</p>
+            </div>
+            <div id="playlist3" class="row justify-content-center align-items-center g-2">
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-16.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Lavorare da Casa</h4>
+                            <p class="card-text">Playlist fancazzisti</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-17.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">New Music Friday</h4>
+                            <p class="card-text">Novità di Venerdì</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-18.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Estate 2022</h4>
+                            <p class="card-text">Playlist estate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-19.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">Street Culto</h4>
+                            <p class="card-text">Playlist Rap</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img class="card-img-top" src="../assets/imgs/main/image-5.jpg" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">lofi beats</h4>
+                            <p class="card-text">Playlist lofi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <div id="albumplaylist" class="d-none m-5">
+        <div id="hero" class="my-4 mx-4">
+            <div id="titoli" class="d-flex align-items-center ">
+
+            </div>
+        </div>
+
+        <div id="icons" class="d-flex align-items-center">
+            <div class="m-3 d-flex align-items-center">
+                <i class="bi bi-play-circle-fill text-success mx-1 h1"></i>
+            </div>
+
+            <div class="d-flex align-items-center">
+               <i class=" bi bi-suit-heart mx-2 h3"></i>
+                <i class="bi bi-download mx-2 h3"></i>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle text-white" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="bi bi-list h3"></i>
+                    </button>
+                    <ul class="dropdown-menu bg-black">
+                        <li><button class="dropdown-item  text-white" type="button">Action</button></li>
+                        <li><button class="dropdown-item  text-white" type="button">Another action</button></li>
+                        <li><button class="dropdown-item  text-white" type="button">Something else here</button></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="playlistWrapper">
+            <div class="row">
+                <h3 class="col-3"># TITOLO</h3>
+                <h3 class="col-3"> ALBUM</h3>
+                <h3 class="col-3">RIPRODUZIONI</h3>
+                
+                <h3 class="col-3"><i class="bi bi-clock"></i></h3>
+            </div>
+            <div id="playlist">
+
+
+            </div>
+        </div>
+    </div>
+
+    <div id="artist" class="d-none ">
+        <div id="artist-info">
+            <img id="artist-image" src="" alt="Artista">
+            <p id="artist-name"></p>
+            <p id="artist-fans"></p>
+            <p id="artist-share"></p>
+        </div>
+    
+    
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5"/>
+              </svg>
+            
+            <p>Following</p>
+        </div>
+    </div>
+</body>
+
+</html>
