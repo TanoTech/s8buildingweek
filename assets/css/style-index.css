@@ -225,13 +225,51 @@ footer {
 }
 
 footer i {
-    color: white;
+    color: rgb(152, 151, 151);
     padding: 10px;
     font-size: 23px;
+    transition: color 0.3s ease;
 }
 #play {
     font-size: 40px;
 }
 #volume {
-    accent-color: white;
+    accent-color: rgb(255, 255, 255);
 }
+footer i:hover {
+    color: hsl(0, 0%, 100%);
+}
+footer i:active {
+    color: green;
+}
+#inizio {
+    color: white;
+}
+#fine {
+    color: white;
+}
+#progressBar {
+    accent-color: green;
+
+}
+#playButton {
+    font-size: 40px;
+    color: rgb(152, 151, 151);
+}
+#playButton:hover {
+    color: hsl(0, 0%, 100%);
+}
+
+#primaryView {
+	display: flex;
+}
+
+#popularSongArtist {
+	flex: 0 0 60%;
+}
+
+#userLikedSong {
+	margin-left: 4rem;
+	margin-top: 3rem;
+}
+
