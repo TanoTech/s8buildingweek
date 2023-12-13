@@ -180,19 +180,71 @@ function minutaggio(duration) {
 	return risultatoFormattato;
 }
 
+function minutaggio(duration) {
+	let ore = Math.floor(duration / 60);
+	let minutiRimanenti = duration % 60;
+
+	let risultatoFormattato =
+		ore + ":" + (minutiRimanenti < 10 ? "0" : "") + minutiRimanenti;
+
+	return risultatoFormattato;
+}
+let player=document.getElementById("player")
+let mp3pos=document.getElementById("mp3")
+let immagineP=document.getElementById("immaginePlayer")
+let titoloP=document.getElementById("titoloPlayer")
+let artistaP=document.getElementById("artistaPlayer")
+
 async function cercaMp3(url) {
 	const mp3 = await renderApi("track/" + url);
 	if (mp3.preview == "") {
 		alert("Canzone non presente nel database");
+		return
 	}
-	console.log(mp3.preview);
-	let creaPlayer = document.createElement("div");
-	creaPlayer.innerHTML = `<audio controls>
-    <source id="mp3" src="${mp3.preview}" type="audio/mp3">
-  </audio>`;
-	container.appendChild(creaPlayer);
+	mp3pos.src=mp3.preview
+	console.log(mp3.title)
+	immagineP.src=mp3.album.cover_small
+	titoloP.innerHTML=`${mp3.title}`
+	artistaP.innerHTML=`${mp3.artist.name}`
+	player.load()
+	player.play()
+    let volumeSlider = document.getElementById('volume');
+	let progressBar = document.getElementById('progressBar');
+	volumeSlider.addEventListener('input', function() {
+		// Imposta il volume dell'elemento audio in base al valore del range
+		player.volume = parseFloat(volumeSlider.value);
+	});
+	player.addEventListener('timeupdate', function() {
+		// Calcola il progresso in percentuale e aggiorna la barra di avanzamento
+		if(isFinite(player.duration)){
+		let progress = (player.currentTime / player.duration) * 100;
+
+		document.getElementById("inizio").innerText=parseInt(player.currentTime)
+		document.getElementById("fine").innerText=parseInt(player.duration)
+		progressBar.value = progress;
+		}
+	});
+	document.getElementById("playButton").classList.remove("fa-circle-play")
+	document.getElementById("playButton").classList.add("fa-circle-pause")
+
+	
 }
-function avviaMp3() { }
+function playPause(){
+	let pause=document.getElementById("playButton")
+	console.log(player)
+	console.log(player.paused)
+	if(player.paused)
+	{
+		player.play()
+		pause.classList.remove("fa-circle-play")
+		pause.classList.add("fa-circle-pause")
+	}
+	else{
+		player.pause()
+		pause.classList.remove("fa-circle-pause")
+		pause.classList.add("fa-circle-play")
+	}
+}
 
 async function getTopTracks(artistId) {
 	try {
