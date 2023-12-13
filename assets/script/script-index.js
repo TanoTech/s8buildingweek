@@ -19,7 +19,7 @@ async function renderApi(url) {
 	const response = await fetch(urlApi + url, {
 		method: "GET",
 		headers: {
-			"X-RapidAPI-Key": "8bcbc2b046msh3dcbb714409d7fep1e2e85jsn9003429acc6f",
+			"X-RapidAPI-Key": "02778350a1msha229d8a0a38ebb9p1b524ejsn81bdca4a05f9",
 			"X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
 		},
 	});
@@ -239,6 +239,7 @@ function playPause(){
 		pause.classList.add("fa-circle-play")
 	}
 }
+
 
 async function getTopTracks(artistId) {
 	try {
