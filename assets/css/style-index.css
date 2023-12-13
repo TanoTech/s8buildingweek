@@ -235,3 +235,16 @@ footer i {
 #volume {
     accent-color: white;
 }
+
+#primaryView {
+	display: flex;
+}
+
+#popularSongArtist {
+	flex: 0 0 60%;
+}
+
+#userLikedSong {
+	margin-left: 4rem;
+	margin-top: 3rem;
+}

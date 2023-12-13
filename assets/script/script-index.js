@@ -129,9 +129,8 @@ function displayTitoli(items) {
 				<h1 class="display-2">${items.title}</h1>
 			</div>
     <div>
-			<p><span>${items.creator.name}</span> - ${items.creation_date} _ ${
-		items.nb_tracks
-	}, ${minutaggio(items.duration)}  </p>
+			<p><span>${items.creator.name}</span> - ${items.creation_date} _ ${items.nb_tracks
+		}, ${minutaggio(items.duration)}  </p>
 		</div>
     </div>
      
@@ -150,17 +149,14 @@ function displayTracks(playlist) {
 		playlist.innerHTML = `
      <div class="row my-3">
             <div class="col-4">
-              <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${
-			song.title
-		}</h3>
-              <h3 onclick="cercaArtista(${
-															song.artist.id
-														})" class="fs-6 fw-light">${song.artist.name}</h3>
+              <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${song.title
+			}</h3>
+              <h3 onclick="cercaArtista(${song.artist.id
+			})" class="fs-6 fw-light">${song.artist.name}</h3>
             </div>
             <div class="col-4">
-              <p onclick="cercaAlbum(${
-															song.album.id
-														})" class="h5 text-center ">${song.album.title}</p>
+              <p onclick="cercaAlbum(${song.album.id
+			})" class="h5 text-center ">${song.album.title}</p>
             </div>
             <div class="col-3">
               <p class="h5 text-center">${song.id}</p>
@@ -196,7 +192,24 @@ async function cercaMp3(url) {
   </audio>`;
 	container.appendChild(creaPlayer);
 }
-function avviaMp3() {}
+function avviaMp3() { }
+
+async function getTopTracks(artistId) {
+	try {
+		const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=5`);
+		const data = await response.json();
+		console.log("Top Tracks Data:", data);
+		return data.data;
+	} catch (error) {
+		console.error("Errore nel recupero delle canzoni più popolari dell'artista:", error);
+	}
+}
+
+function formatDuration(durationInSeconds) {
+	const minutes = Math.floor(durationInSeconds / 60);
+	const seconds = durationInSeconds % 60;
+	return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
 
 async function cercaArtista(id) {
 	svuotaHome();
@@ -220,5 +233,32 @@ async function cercaArtista(id) {
 	artistImageElement.src = artistImageURL;
 	userLikedSongs.textContent = `Hai messo mi piace a ${randomLikes} canzoni`;
 
-	const artistAlbums = await renderApi("artist/" + id + "/albums");
+	const topTracks = await getTopTracks(id);
+	const topTracksElement = document.getElementById("top-tracks");
+	if (topTracksElement) {
+		topTracksElement.innerHTML = "";
+		topTracks.forEach(track => {
+			let trackElement = document.createElement("div");
+			trackElement.innerHTML = `
+    <div class="track row align-items-center">
+        <div class="col-auto">
+            <img src="${track.album.cover_small}" alt="${track.title}" class="img-fluid">
+        </div>
+        <div class="col">
+            <h4>${track.title}</h4>
+        </div>
+        <div class="col-auto">
+            <p>${track.rank}</p>
+        </div>
+        <div class="col-auto">
+            <p>Durata: ${formatDuration(track.duration)}</p>
+        </div>
+    </div>
+`;
+			topTracksElement.appendChild(trackElement);
+		});
+	} else {
+		console.error("Elemento top-tracks non trovato nel DOM");
+	}
 }
+
