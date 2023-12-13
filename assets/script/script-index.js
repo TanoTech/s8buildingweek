@@ -55,8 +55,8 @@ async function playlistPopola() {
 		cardPlaylist[i].addEventListener("click", () => caricaPlaylist(idbuoni[i]));
 	}
 }
-//crea il Visualizza Tutto
 
+//crea il Visualizza Tutto
 function viewMore(i, titolo) {
 	let numrandom = Math.floor(Math.random() * 4);
 	if (numrandom == i) {
@@ -309,7 +309,7 @@ async function cercaArtista(id) {
                         <img src="${track.album.cover_small}" alt="${track.title}" class="img-fluid">
                     </div>
                     <div class="col">
-                        <p>${track.title}</p>
+                        <p onclick="cercaMp3(${track.id})">${track.title}</p>
                     </div>
                     <div class="col-auto">
                         <p>${track.rank}</p>
@@ -335,7 +335,7 @@ async function cercaArtista(id) {
 			albumDiv.classList.add("col-sm-6", "col-md-4", "col-lg-2")
 
 			albumDiv.innerHTML = `
-            <div class="card">
+            <div onclick="cercaAlbum(${album.id})" class="card">
                 <img src="${album.cover}" class="card-img-top img-fluid" alt="${album.title}">
                 <div class="card-body">
                     <h5 class="card-title">${album.title}</h5>
