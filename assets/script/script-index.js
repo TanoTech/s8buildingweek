@@ -286,10 +286,10 @@ async function cercaArtista(id) {
 			albumDiv.classList.add("card", "m-2")
 			albumDiv.style.width = '12rem'
 			albumDiv.innerHTML = `
-            <div class="card-body">
-			    <img src="${album.cover_small}" class="card-img-top img-fluid" alt="${album.title}">
-                <h5 class="card-title">${album.title}</h5>
-                <p class="card-text">${albumYear} ${album.record_type}</p>
+            <div class="card-body" id='albumCard'>
+			    <img src="${album.cover_small}" class="card-img-top img-fluid col" alt="${album.title}">
+                <h5 class="card-title col">${album.title}</h5>
+                <p class="card-text col">${albumYear} ${album.record_type}</p>
             </div>
         `;
             albumsElement.appendChild(albumDiv)
