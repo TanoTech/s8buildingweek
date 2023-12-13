@@ -47,16 +47,10 @@ async function playlistPopola() {
 	console.log(cardPlaylist.length);
 	for (let i = 0; i < cardPlaylist.length; i++) {
 		playlist = await renderApi("playlist/" + idbuoni[i]);
+		console.log(playlist)
 		cardPlaylist[i].innerHTML = `
-        <div>`;
-		for (let i2 = 0; i2 < 4; i2++) {
-			let numImg = Math.floor(Math.random() * playlist.tracks.data.length);
-			let immagine = playlist.tracks.data[numImg];
-			cardPlaylist[
-				i
-			].innerHTML += `<img src="${immagine.album.cover_small}" alt="" srcset="">`;
-		}
-		cardPlaylist[i].innerHTML += `</div>
+        <div><img src="${playlist.picture_small}" alt="" srcset="">
+		</div>
         <p>${playlist.title}</p>`;
 		cardPlaylist[i].addEventListener("click", () => caricaPlaylist(idbuoni[i]));
 	}
