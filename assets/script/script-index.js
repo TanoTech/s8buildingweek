@@ -291,9 +291,9 @@ async function cercaArtista(id) {
                 <h5 class="card-title col">${album.title}</h5>
                 <p class="card-text col">${albumYear} ${album.record_type}</p>
             </div>
-        `;
+        `
             albumsElement.appendChild(albumDiv)
-        });
+        })
     } else {
         console.error("Elemento albums-container non trovato nel DOM")
     }
