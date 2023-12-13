@@ -196,69 +196,106 @@ function avviaMp3() { }
 
 async function getTopTracks(artistId) {
 	try {
-		const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=5`);
-		const data = await response.json();
-		console.log("Top Tracks Data:", data);
-		return data.data;
+		const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=5`)
+		const data = await response.json()
+		console.log("Top Tracks Data:", data)
+		return data.data
 	} catch (error) {
-		console.error("Errore nel recupero delle canzoni più popolari dell'artista:", error);
+		console.error("Errore nel recupero delle canzoni più popolari dell'artista:", error)
 	}
 }
 
 function formatDuration(durationInSeconds) {
-	const minutes = Math.floor(durationInSeconds / 60);
+	const minutes = Math.floor(durationInSeconds / 60)
 	const seconds = durationInSeconds % 60;
-	return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+	return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
+}
+
+async function getAlbumsByArtist(artistId) {
+    try {
+        const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/albums`
+        const response = await fetch(url)
+        if (!response.ok) {
+            throw new Error(`Errore HTTP: ${response.status}`)
+        }
+        const data = await response.json()
+        return data.data
+    } catch (error) {
+        console.error("Errore nel recupero degli album dell'artista:", error)
+    }
 }
 
 async function cercaArtista(id) {
-	svuotaHome();
-	document.getElementById("albumplaylist").classList.add("d-none");
-	document.getElementById("artist").classList.remove("d-none");
+    svuotaHome()
+    document.getElementById("albumplaylist").classList.add("d-none")
+    document.getElementById("artist").classList.remove("d-none")
 
-	let randomLikes = Math.round(Math.random() * 99) + 1;
+    let randomLikes = Math.round(Math.random() * 99) + 1
 
-	const artistData = await renderApi("artist/" + id);
-	const artistName = artistData.name;
-	const artistFans = artistData.nb_fan;
-	const artistImageURL = artistData.picture;
+    const artistData = await renderApi("artist/" + id)
+    const artistName = artistData.name
+    const artistFans = artistData.nb_fan
+    const artistImageURL = artistData.picture
 
-	const artistNameElement = document.getElementById("artist-name");
-	const artistFansElement = document.getElementById("artist-fans");
-	const artistImageElement = document.getElementById("artist-image");
-	const userLikedSongs = document.getElementById("randomLike");
+    const artistNameElement = document.getElementById("artist-name")
+    const artistFansElement = document.getElementById("artist-fans")
+    const artistImageElement = document.getElementById("artist-image")
+    const userLikedSongs = document.getElementById("randomLike")
 
-	artistNameElement.textContent = artistName;
-	artistFansElement.textContent = `${artistFans} ascoltatori mensili`;
-	artistImageElement.src = artistImageURL;
-	userLikedSongs.textContent = `Hai messo mi piace a ${randomLikes} canzoni`;
+    artistNameElement.textContent = artistName;
+    artistFansElement.textContent = `${artistFans} ascoltatori mensili`
+    artistImageElement.src = artistImageURL;
+    userLikedSongs.textContent = `Hai messo mi piace a ${randomLikes} canzoni`
 
-	const topTracks = await getTopTracks(id);
-	const topTracksElement = document.getElementById("top-tracks");
-	if (topTracksElement) {
-		topTracksElement.innerHTML = "";
-		topTracks.forEach(track => {
-			let trackElement = document.createElement("div");
-			trackElement.innerHTML = `
-    <div class="track row align-items-center">
-        <div class="col-auto">
-            <img src="${track.album.cover_small}" alt="${track.title}" class="img-fluid">
-        </div>
-        <div class="col">
-            <h4>${track.title}</h4>
-        </div>
-        <div class="col-auto">
-            <p>${track.rank}</p>
-        </div>
-        <div class="col-auto">
-            <p>Durata: ${formatDuration(track.duration)}</p>
-        </div>
-    </div>
-`;
-			topTracksElement.appendChild(trackElement);
-		});
-	} else {
-		console.error("Elemento top-tracks non trovato nel DOM");
-	}
+    const topTracks = await getTopTracks(id)
+    const topTracksElement = document.getElementById("top-tracks")
+    
+    if (topTracksElement) {
+        topTracksElement.innerHTML = ""
+        topTracks.forEach(track => {
+            let trackElement = document.createElement("div")
+            trackElement.innerHTML = `
+                <div class="track row align-items-center">
+                    <div class="col-auto">
+                        <img src="${track.album.cover_small}" alt="${track.title}" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <h4>${track.title}</h4>
+                    </div>
+                    <div class="col-auto">
+                        <p>${track.rank}</p>
+                    </div>
+                    <div class="col-auto">
+                        <p>Durata: ${formatDuration(track.duration)}</p>
+                    </div>
+                </div>
+            `;
+            topTracksElement.appendChild(trackElement);
+        });
+    } else {
+        console.error("Elemento top-tracks non trovato nel DOM")
+    }
+
+    const albums = await getAlbumsByArtist(id)
+    const albumsElement = document.getElementById("albums-container")
+    if (albumsElement) {
+        albumsElement.innerHTML = ""
+        albums.slice(0, 8).forEach(album => {
+			let albumYear = album.release_date.split("-")[0]
+            let albumDiv = document.createElement("div")
+			albumDiv.classList.add("card", "m-2")
+			albumDiv.style.width = '18rem'
+			albumDiv.innerHTML = `
+            
+            <div class="card-body">
+			    <img src="${album.cover_small}" class="card-img-top img-fluid" alt="${album.title}">
+                <h5 class="card-title">${album.title}</h5>
+                <p class="card-text">${albumYear} ${album.record_type}</p>
+            </div>
+        `;
+            albumsElement.appendChild(albumDiv)
+        });
+    } else {
+        console.error("Elemento albums-container non trovato nel DOM")
+    }
 }
-
