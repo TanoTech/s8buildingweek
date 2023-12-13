@@ -3,36 +3,73 @@ document.addEventListener("submit", async function (event) {
 	event.preventDefault();
 	let artistName = document.getElementById("artistName").value;
 	let data = await renderApi("search?q=" + artistName);
-	console.log(data.artist);
 	let dataArtist = await renderApi("artist/" + artistName);
-	getArtistInfo(dataArtist, data);
+	getArtistInfo(dataArtist, data, artistName);
 });
 
-function getArtistInfo(data, data2) {
+function getArtistInfo(data, data2, data3) {
 	const artistNameDisplay = document.getElementById("artistNameDisplay");
-	console.log(data);
+	const songsList = document.getElementById("songsList");
+	artistNameDisplay.innerHTML = "";
+	songsList.innerHTML = "";
+	albumListWrapper.innerHTML = "";
 
-	artistNameDisplay.innerHTML = `
+	console.log(data);
+	if (data.name != undefined) {
+		artistNameDisplay.innerHTML = `
   <div>
   <img src="${data.picture}" id="artistImage" alt="Immagine dell'artista">
   <h2>${data.name}</h2>
   </div>
   `;
-
-	const songsList = document.getElementById("songsList");
+	}
 
 	console.log(data2.data);
 
-	data2.data.forEach((song) => {
-		let songName = document.createElement("div");
-		songName.innerHTML = `
-    <div>
-        <p>${song.title}</p>
-        <img src="${song.album.cover_small}" alt="">
-      </div>`;
+	let album = "";
+	let artista = data2.data[0].artist.name;
 
-		songsList.appendChild(songName);
-	});
+	for (let i = 0; i < data2.data.length; i++) {
+		const element = data2.data[i];
+
+		console.log(element.album.title);
+
+		if (album != element.album.title) {
+			album = data2.data[0].album.title;
+			let albumList = document.createElement("div");
+			albumList.innerHTML = `
+		<div>
+		    <p>${element.album.title}</p>
+        <p>${element.album.type}</p>
+		    <img src="${element.album.cover_small}" alt="">
+		  </div>`;
+
+			albumListWrapper.appendChild(albumList);
+		}
+
+		if (artista == element.artist.name) {
+			let songName = document.createElement("div");
+			songName.innerHTML = `
+		<div>
+		    <p>${element.title}</p>
+        <p>${element.type}</p>
+		    <img src="${element.album.cover_small}" alt="">
+		  </div>`;
+
+			songsList.appendChild(songName);
+		}
+	}
+
+	// data2.data.forEach((song) => {
+	// 	let songName = document.createElement("div");
+	// 	songName.innerHTML = `
+	//   <div>
+	//       <p>${song.title}</p>
+	//       <img src="${song.album.cover_small}" alt="">
+	//     </div>`;
+
+	// 	songsList.appendChild(songName);
+	// });
 
 	document.getElementById("artistInfo").style.display = "block";
 }
