@@ -415,8 +415,6 @@ async function cercaArtista(id) {
 	artistImageElement.src = artistImageURL;
 	userLikedSongs.textContent = `Hai messo mi piace a ${randomLikes} canzoni`
 	bgVerified.style.backgroundImage = `url("${imageBg}")`
-	bgVerified.classList.add('opacity-25')
-
 
 	const topTracks = await getTopTracks(id)
 	const topTracksElement = document.getElementById("top-tracks")
