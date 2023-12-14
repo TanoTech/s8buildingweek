@@ -195,6 +195,7 @@ function displayTracks(playlist,checkType) {
 	if(checkType=="playlist")
 	{
 	playlist.forEach((song) => {
+		let numeroAscoltoRandom = Math.floor(Math.random() * 1000000) + 100000
 
 		playlistWrapper.innerHTML += `
 
@@ -210,7 +211,7 @@ function displayTracks(playlist,checkType) {
 			})" class="h5 text-center ">${song.album.title}</p>
             </div>
             <div class="col-3">
-              <p class="h5 text-center">${song.id}</p>
+              <p class="h5 text-center">${numeroAscoltoRandom}</p>
             </div>
             
             <div class="col-1">
