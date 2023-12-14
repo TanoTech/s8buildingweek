@@ -35,14 +35,17 @@ async function popolaSection() {
 	let songs = await renderApi("search?q=" + arrayArtisti[randomArtist]);
 	let random = Math.floor(Math.random() * songs.data.length);
 	let song = songs.data[random];
-	let h1sponsor = document.querySelector("#sponsored h1");
-	let h4first = document.querySelectorAll("#sponsored h4")[0];
-	let h4second = document.querySelectorAll("#sponsored h4")[1];
-	h1sponsor.innerHTML = song.title;
-	h4first.innerHTML = song.artist.name;
-	h4second.innerHTML = "Ascolta il nuovo singolo di: " + song.artist.name;
+	let homesponsor = document.getElementById("sponsored")
+	homesponsor.innerHTML=`<h1 onclick="cercaMp3(${song.id})">${song.title}</h1>
+	<h4 onclick="cercaArtista(${song.artist.id})">${song.artist.name}</h4>
+	<h4>Ascolta il nuovo singolo di: ${song.artist.name}</h4>
+	<input onclick="cercaMp3(${song.id})" type="button" value="PLAY">
+	<input type="button" value="SALVA">
+	<img class='img-fluid' src="${song.album.cover_medium}" alt="${song.album}" srcset="">
+	`
 	await playlistPopola();
 }
+
 //manca la funzione che rende maiuscola la prima lettera del titolo della playlist
 async function playlistPopola() {
 	let cardPlaylist = document.querySelectorAll("#playlistCard>div");
@@ -352,7 +355,7 @@ async function cercaArtista(id) {
 	artistImageElement.src = artistImageURL;
 	userLikedSongs.textContent = `Hai messo mi piace a ${randomLikes} canzoni`
 	bgVerified.style.backgroundImage = `url("${imageBg}")`
-	bgVerified.style.backgroundImage.opacity = '20%'
+	bgVerified.style.backgroundColor = 'rgba(0, 0, 0, 1.5)'
 
 	const topTracks = await getTopTracks(id)
 	const topTracksElement = document.getElementById("top-tracks")
