@@ -472,9 +472,6 @@ async function cercaArtista(id) {
 	}
 }
 
-
-
-
 function formCerca(){
 	container.classList.add("d-none")
 	containerAlbum.classList.add("d-none")
@@ -575,5 +572,3 @@ function checkAlbum(albums, element) {
 		return true;
 	}
 }
-
-
