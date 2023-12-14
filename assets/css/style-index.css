@@ -216,10 +216,11 @@ ul {
 
 #homepage,
 #albumplaylist,
-#artist,
-#album {
-	padding-left: 190px;
 
+#album,
+#search,
+#artist {
+	padding-left: 190px;
 }
 
 footer {
