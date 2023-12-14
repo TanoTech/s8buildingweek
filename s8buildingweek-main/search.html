@@ -1,32 +1,53 @@
-<!DOCTYPE html>
+<!DOCTYpE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search</title>
+    <link rel="stylesheet" href="/s8buildingweek-main/assets/css/search.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
 </head>
 <body>
-    <h1>Ricerca Artista</h1>
-    <form id="artistForm">
-      <label for="artistName">Nome dell'artista:</label>
-      <input type="text" id="artistName" required>
-      <button type="submit">Cerca</button>
-    </form>
-  
-    <div id="artistInfo">
-      <div id="artistNameDisplay">
-  
+    <div>
+      <form id="artistForm">
+        <input type="text" id="artistName" required>
+        <button type="submit">Cerca</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="d-flex">
+        <p>Tutto</p>
+        <p>Brani</p>
+        <p>Artisti</p>
+        <p>Playlist</p>
+        <p>Album</p>
+        <p>Podcast e show</p>
+        <p>Profili</p>
       </div>
-  
-  
-      <h3>Canzoni:</h3>
-      <ul id="albumListWrapper"></ul>
-  
-  
-      <ul id="songsList">
-      </ul>
+    
+      <div class="d-flex">
+        <div>
+          <div id="artistInfo">
+        <h3>Risultato più rilevante</h3>
+        <div id="artistNameDisplay"></div>
+        <h3>Brani</h3>
+      </div>
+      <div>
+        <ul id="songsList">
+        </ul>
+    </div>
+      
+    
+    
+    <div>
+        <ul id="albumListWrapper"></ul>
+        
     </div>
   
     <script src="assets/script/ricerca.js"></script>
+    <script src="https://kit.fontawesome.com/311c941856.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

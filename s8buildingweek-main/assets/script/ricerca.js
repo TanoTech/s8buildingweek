@@ -25,6 +25,8 @@ function getArtistInfo(data, data2) {
   <div>
   <img src="${data.picture}" id="artistImage" alt="Immagine dell'artista">
   <h2>${data.name}</h2>
+  <h4>${data.name}</h4>
+  <p>${data.type}</p>
   </div>
   `;
 	}
