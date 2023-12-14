@@ -274,15 +274,15 @@ footer i:active {
 
 /* HEADER */
 #header {
-	padding-left: 210px;
-	padding-right: 210px;
-	background: #000;
-	z-index: 999;
+	margin-left: 200px;
+	margin-right: 200px;
+	z-index: 1000;
 }
 
 #header ul,
 #header li {
 	list-style-type: none;
+	z-index: 1001;
 }
 
 #homepage,
