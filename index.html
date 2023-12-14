@@ -463,9 +463,6 @@
             </div>
         </div>
 
-
-
-
         <div id="albumplaylist" class="d-none text-white">
 
             <div id="hero" class="my-4 mx-4">
@@ -513,10 +510,56 @@
             </div>
         </div>
 
+        <div id="album" class="d-none text-white">
+
+            <div id="hero" class="my-4 mx-4">
+                <div id="titoliAlbum" class="d-flex align-items-center ">
+
+                </div>
+            </div>
+
+
+
+
+            <div id="playlistWrapper " class="bg-secondary">
+                <div id="icons" class="d-flex align-items-center">
+                    <div class="m-3 d-flex align-items-center">
+                        <i class="bi bi-play-circle-fill text-success mx-1 h1"></i>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <i class=" bi bi-suit-heart mx-2 h3"></i>
+                        <i class="bi bi-download mx-2 h3"></i>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle text-white" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="bi bi-list h3"></i>
+                            </button>
+                            <ul class="dropdown-menu bg-black">
+                                <li><button class="dropdown-item  text-white" type="button">Action</button></li>
+                                <li><button class="dropdown-item  text-white" type="button">Another action</button></li>
+                                <li><button class="dropdown-item  text-white" type="button">Something else here</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row border-bottom border-white px-4">
+                    <h3 class="col-4"># TITOLO</h3>
+                    <h3 class="col-3 text-center">RIPRODUZIONI</h3>
+                    <h3 class="col-1 text-center"><i class="bi bi-clock"></i></h3>
+                </div>
+
+                <div id="canzoniAlbum" class="px-4">
+                </div>
+            </div>
+        </div>
+
         <div id="artist" class="d-none ">
             <div id="artist-info">
                 <div id="verifiedArtist">
-                    <div class="d-flex">
+                    <div class="d-flex" id="verificato">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue"
                             class="bi bi-patch-check-fill" viewBox="0 0 16 16">
                             <path
@@ -604,6 +647,8 @@
 
             </div>
         </footer>
+
+
 </body>
 
 </html>
