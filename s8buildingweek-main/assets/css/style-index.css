@@ -1,0 +1,275 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+/*IMPOSTAZIONI GENERALI*/
+h4 {
+	font-size: 0.5em;
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: #121212;
+	font-family: "Montserrat", sans-serif;
+}
+
+span {
+	font-size: 0.7rem;
+	padding-left: 4px;
+}
+
+i {
+	font-size: 0.8rem;
+	padding: 3px;
+}
+
+hr {
+	color: #b3b3b3;
+	opacity: 15%;
+}
+
+/*SIDEBAR DI SINISTRA*/
+
+dl,
+ol,
+ul {
+	padding-left: 0;
+}
+
+.sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 200px;
+	background-color: #000000;
+	padding: 24px;
+	height: 100vh;
+	overflow: auto;
+	z-index: 1000;
+}
+
+.sidebar .navigation ul {
+	list-style: none;
+	margin-bottom: 24px;
+}
+.sidebar .navigation ul li {
+	padding: 5px 0px;
+}
+.sidebar .navigation ul li a {
+	color: #b3b3b3;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 13px;
+}
+.sidebar .navigation ul li a:hover,
+.sidebar .navigation ul li a:active,
+.sidebar .navigation ul li a:focus {
+	color: #ffffff;
+}
+.sidebar .navigation ul li a:hover .fa,
+.sidebar .navigation ul li a:active .fa,
+.sidebar .navigation ul li a:focus .fa {
+	color: #b3b3b3;
+}
+.sidebar .navigation ul li .fa {
+	font-size: 20px;
+	margin-right: 10px;
+}
+.sidebar .navigation ul li a:hover .fa:hover,
+.sidebar .navigation ul li a:hover .fa:active,
+.sidebar .navigation ul li a:hover .fa:focus {
+	color: #ffffff;
+}
+.sidebar .playlist {
+	position: absolute;
+	margin-top: 10px;
+}
+.sidebar .playlist ul {
+	list-style: none;
+}
+.sidebar .playlist ul li {
+	padding-bottom: 5px;
+}
+.sidebar .playlist ul li a {
+	color: #b3b3b3;
+	font-weight: 500;
+	text-decoration: none;
+	font-size: 10px;
+}
+.sidebar .playlist ul li a:hover,
+.sidebar .playlist ul li a:active,
+.sidebar .playlist ul li a:focus {
+	text-decoration: underline;
+}
+
+#cuore {
+	background: linear-gradient(
+		135deg,
+		rgb(59, 28, 169) 37%,
+		rgb(59, 28, 169) 37%,
+		rgb(41, 137, 216) 100%,
+		rgb(123, 143, 154) 100%
+	);
+
+	padding: 3px;
+}
+
+#mark {
+	background-color: #004537;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	color: #149643;
+}
+
+#plus {
+	background-color: #b3b3b3;
+	color: #000000;
+	padding: 4px;
+}
+
+/*SIDEBAR DI DESTRA*/
+
+.sidebar-wrapper {
+	z-index: 1000;
+	top: 0;
+	position: fixed;
+	right: 250px;
+	width: 200px;
+	height: 100%;
+	margin-right: -250px;
+	overflow-y: auto;
+	background: #000000;
+}
+
+.page-content-wrapper {
+	width: 100%;
+	position: absolute;
+}
+
+.wrapper {
+	padding-right: 190px;
+}
+
+.sidebar-wrapper a {
+	color: #b3b3b3;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 0.7rem;
+}
+.sidebar-wrapper li {
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.sidebar-wrapper ul li a:hover,
+.sidebar-wrapper ul li a:active,
+.sidebar-wrapper ul li a:focus {
+	color: #ffffff;
+}
+
+.sidebar-wrapper li i {
+	float: right;
+	padding: 5px;
+	padding-right: 7px;
+	color: #b3b3b3;
+}
+
+.friends {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.friend {
+	padding: 10px 0;
+}
+
+.friend img {
+	padding: 5px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	float: left;
+}
+
+.name {
+	font-weight: bold;
+	color: #b3b3b3;
+}
+
+.song {
+	font-style: italic;
+	color: #b3b3b3;
+}
+
+.status {
+	color: #b3b3b3;
+	padding: 0;
+}
+
+.friends li i {
+	float: left;
+	padding: 5px;
+	font-size: 12px;
+}
+
+#homepage,
+#albumplaylist,
+#artist {
+	padding-left: 190px;
+}
+
+footer {
+	z-index: 100000000;
+}
+
+footer i {
+    color: rgb(152, 151, 151);
+    padding: 10px;
+    font-size: 23px;
+    transition: color 0.3s ease;
+}
+#play {
+    font-size: 40px;
+}
+#volume {
+    accent-color: rgb(255, 255, 255);
+}
+footer i:hover {
+    color: hsl(0, 0%, 100%);
+}
+footer i:active {
+    color: green;
+}
+#inizio {
+    color: white;
+}
+#fine {
+    color: white;
+}
+#progressBar {
+    accent-color: green;
+
+}
+#playButton {
+    font-size: 40px;
+    color: rgb(152, 151, 151);
+}
+#playButton:hover {
+    color: hsl(0, 0%, 100%);
+}
+
+#primaryView {
+	display: flex;
+}
+
+#popularSongArtist {
+	flex: 0 0 60%;
+}
+
+#userLikedSong {
+	margin-left: 4rem;
+	margin-top: 3rem;
+}
+

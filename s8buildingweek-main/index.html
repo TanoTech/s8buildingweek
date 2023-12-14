@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Spotify player stream all the music you like!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="icon" href="assets/imgs/Spotify_App_Logo.svg.png">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="assets/script/script-index.js" defer></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
+
+    <script src="https://kit.fontawesome.com/311c941856.js" crossorigin="anonymous" defer></script>
+
+    <link rel="stylesheet" href="assets/css/style-index.css">
+    <link rel="stylesheet" href="assets/css/artist.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-house"></i>
+                        <span  onclick="window.location.reload()">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="search.html">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Cerca</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-book"></i>
+                        <span>La tua libreria</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-plus" id="plus"></i>
+                        <span>Crea playlist id</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-heart" id="cuore"></i>
+                        <span>Brani che ti piacciono</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-bookmark" id="mark"></i>
+                        <span>I tuoi episodi</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="playlist">
+            <ul>
+                <li>
+                    <a href="#">early stage emily syndrome (sett-ott 2022)</a>
+                </li>
+                <li>
+                    <a href="#">Be The Young</a>
+                </li>
+                <li>
+                    <a href="#">&#34;...&#34;cit.Kimiko (lug-ago 2022)</a>
+                </li>
+                <li>
+                    <a href="#">saggio vibes&#128131;</a>
+                </li>
+                <li>
+                    <a href="#">main character energy (mag-giu 2022)</a>
+                </li>
+                <li>
+                    <a href="#">that fucking mood&#128481;&#128369;</a>
+                </li>
+                <li>
+                    <a href="#">VEE,CARLOTTA E GIACOMO VANNO A BOSIO</a>
+                </li>
+                <li>
+                    <a href="#">An Emily Winchester kind of mood&#128481;</a>
+                </li>
+                <li>
+                    <a href="#">landing page(mar-apr 2022)</a>
+                </li>
+                <li>
+                    <a href="#">2021 lol</a>
+                </li>
+                <li>
+                    <a href="#">cosa cazzo vuol dire questa affermazione(gen-fe..</a>
+                </li>
+                <li>
+                    <a href="#">hooney and glass(nov-dic 2021)</a>
+                </li>
+                <li>
+                    <a href="#">(Revenge)Training Arc&#128018;</a>
+                </li>
+                <li>
+                    <a href="#">Lidia&#129309;Emily</a>
+                </li>
+                <li>
+                    <a href="#">minecraft e nintendo switch(sep-ocy 2021)</a>
+                </li>
+                <li>
+                    <a href="#">silvano d'orba? I hardly know her (lug-ago 2021)</a>
+                </li>
+                <li>
+                    <a href="#">Culo 2021</a>
+                </li>
+                <li>
+                    <a href="#">Frah Quintale Mix</a>
+                </li>
+                <li>
+                    <a href="#">Francesco Guccini Mix</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--SIDEBAR DI DESTRA-->
+
+    <div class="wrapper">
+        <div class="sidebar-wrapper">
+            <ul>
+                <li>
+                    <a href="#">Attività amici</a>
+                    <i class="fa-solid fa-xmark"></i>
+                    <i class="fa-regular fa-user"></i>
+                </li>
+            </ul>
+            <div class="friends">
+                <ul class="friends">
+                    <li class="friend">
+                        <img src="/assets/imgs/main/image-11.jpg" alt="Immagine profilo amico">
+                        <span class="name">Charlie Hookham</span>
+                        <br>
+                        <span class="song">In camera &#8226; Yumi Zouma</span>
+                        <br>
+                        <span class="status"><i class="fa-solid fa-compact-disc"></i>EP III</span>
+                    </li>
+                    <li class="friend">
+                        <img src="/assets/imgs/main/image-2.jpg" alt="Immagine profilo amico">
+                        <span class="name">lightdark02</span>
+                        <br>
+                        <span class="song">Aimed to Kill &#8226; Jade LeMac</span>
+                        <br>
+                        <span class="status"><i class="fa-solid fa-compact-disc"></i>Aimed to Kill</span>
+                    </li>
+                    <li class="friend">
+                        <img src="/assets/imgs/main/image-6.jpg" alt="Immagine profilo amico">
+                        <span class="name">Valeria Traverso</span>
+                        <br>
+                        <span class="song">New Kings &#8226; Sleeping Wolf</span>
+                        <br>
+                        <span class="status"><i class="fa-brands fa-itunes-note"></i>Twint Badass mood</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="homepage" class="container ">
+            <div>
+
+
+                <div id="sponsored">
+                    <h1></h1>
+                    <h4></h4>
+                    <h4></h4>
+                    <input type="button" value="PLAY">
+                    <input type="button" value="SALVA">
+                    <img src="" alt="" srcset="">
+                </div>
+            </div>
+            <div>
+                <h2></h2>
+                <div id="playlistCard" class="row justify-content-center align-items-center g-2">
+                    <div class="col-4">
+                    </div>
+                    <div class="col-4">
+                    </div>
+                    <div class="col-4">
+                    </div>
+                    <div class="col-4">
+                    </div>
+                    <div class="col-4">
+                    </div>
+                    <div class="col-4">
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div>
+                <div class="d-flex justify-content-between align-items-baseline ">
+                    <h3>Novità</h3>
+                    <p onclick="viewMore(0,`Novità`)">VISUALIZZA TUTTO</p>
+                </div>
+                <div id="playlist0" class=" row justify-content-center align-items-center g-2">
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-1.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Title</h4>
+                                <p class="card-text">Text</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-2.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">La tua estate è un film</h4>
+                                <p class="card-text">Playlist estiva</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-3.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Massima concentrazione</h4>
+                                <p class="card-text">Playlist per studiare</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-4.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Peaceful Piano</h4>
+                                <p class="card-text">Playlist piano</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-5.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">lofi beats</h4>
+                                <p class="card-text">Playlist lofi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div class="d-flex justify-content-between align-items-baseline ">
+                    <h3>Altro di ciò che ti piace</h3>
+                    <p onclick="viewMore(1,`Altro di ciò che ti piace`)">VISUALIZZA TUTTO</p>
+                </div>
+                <div id="playlist1" class="row justify-content-center align-items-center g-2">
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-6.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Jazz Vibes</h4>
+                                <p class="card-text">Playlist jazz</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-7.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Caffè del buongiorno</h4>
+                                <p class="card-text">Playlist mattutina</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-8.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Sanguegiovane</h4>
+                                <p class="card-text">Text</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-9.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Canta sotto la doccia</h4>
+                                <p class="card-text">Playlist che ti dà la carica</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-10.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Operazione buonumore</h4>
+                                <p class="card-text">Playlist divertente</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div class="d-flex justify-content-between align-items-baseline ">
+                    <h3>Creato per te</h3>
+                    <p onclick="viewMore(2,`Creato per te`)">VISUALIZZA TUTTO</p>
+                </div>
+                <div id="playlist2" class="row justify-content-center align-items-center g-2">
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-11.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Mercury</h4>
+                                <p class="card-text">Imagine Dragons</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-12.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Respira</h4>
+                                <p class="card-text">Samurai Jay</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-13.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Pulizie di Casa</h4>
+                                <p class="card-text">Playlist per Pulire</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-14.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Allenamento a Casa</h4>
+                                <p class="card-text">Playlist Allenamento</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-15.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Casa Dolce Casa</h4>
+                                <p class="card-text">Playlist Chill</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div class="d-flex justify-content-between align-items-baseline ">
+                    <h3>Migliori Playlist</h3>
+                    <p onclick="viewMore(3,`Migliori Playlist`)">VISUALIZZA TUTTO</p>
+                </div>
+                <div id="playlist3" class="row justify-content-center align-items-center g-2">
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-16.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Lavorare da Casa</h4>
+                                <p class="card-text">Playlist fancazzisti</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-17.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">New Music Friday</h4>
+                                <p class="card-text">Novità di Venerdì</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-18.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Estate 2022</h4>
+                                <p class="card-text">Playlist estate</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-19.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">Street Culto</h4>
+                                <p class="card-text">Playlist Rap</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <img class="card-img-top" src="../assets/imgs/main/image-5.jpg" alt="Title" />
+                            <div class="card-body">
+                                <h4 class="card-title">lofi beats</h4>
+                                <p class="card-text">Playlist lofi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div id="albumplaylist" class="d-none text-white">
+
+            <div id="hero" class="my-4 mx-4">
+                <div id="titoli" class="d-flex align-items-center ">
+
+                </div>
+            </div>
+
+
+
+
+            <div id="playlistWrapper " class="bg-secondary">
+                <div id="icons" class="d-flex align-items-center">
+                    <div class="m-3 d-flex align-items-center">
+                        <i class="bi bi-play-circle-fill text-success mx-1 h1"></i>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <i class=" bi bi-suit-heart mx-2 h3"></i>
+                        <i class="bi bi-download mx-2 h3"></i>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle text-white" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="bi bi-list h3"></i>
+                            </button>
+                            <ul class="dropdown-menu bg-black">
+                                <li><button class="dropdown-item  text-white" type="button">Action</button></li>
+                                <li><button class="dropdown-item  text-white" type="button">Another action</button></li>
+                                <li><button class="dropdown-item  text-white" type="button">Something else here</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row border-bottom border-white px-4">
+                    <h3 class="col-4"># TITOLO</h3>
+                    <h3 class="col-4 text-center">ALBUM</h3>
+                    <h3 class="col-3 text-center">RIPRODUZIONI</h3>
+                    <h3 class="col-1 text-center"><i class="bi bi-clock"></i></h3>
+                </div>
+
+                <div id="playlist" class="px-4">
+                </div>
+            </div>
+        </div>
+
+        <div id="artist" class="d-none ">
+            <div id="artist-info">
+                <div id="verifiedArtist">
+                    <div class="d-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue"
+                            class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
+                        </svg>
+                        <p class='text-white'>Aritsta verificato</p>
+                    </div>
+                    <h1 class="display-1 text-white" id="artist-name"></h1>
+                    <p class="text-white" id="artist-fans"></p>
+                </div>
+                <div id="artistPlay">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green"
+                        class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5" />
+                    </svg>
+                    <button class="btn btn-outline-light ms-4 me-2"><small class="fw-bold">FOLLOWING</small></button>
+                    <p>...</p>
+                </div>
+                <div id="primaryView">
+                    <div id="popularSongArtist">
+                        <p>Popolari</p>
+                        <div id="top-tracks"></div>
+                    </div>
+                    <div id="userLikedSong">
+                        <img id="artist-image" class="float-left" src="" alt="">
+                        <p>Brani che ti piacciono</p>
+                        <p id="randomLike"></p>
+                    </div>
+                </div>
+                <div id="discography" class="bg-transparent">
+                    <p>Discografia</p>
+                    <div class="container">
+                        <div class="row" id="albums-container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="position-relative">
+            <div style="display: none;">
+                <audio controls id="player">
+                    <source id="mp3" src="" type="audio/mp3">
+                </audio>
+            </div>
+            <div class="container-fluid bg-dark d-flex p-0 justify-content-between position-fixed bottom-0">
+
+                <div class="text-white d-flex align-items-center p-3">
+                    <img id="immaginePlayer" src="assets/imgs/search/image-1.jpeg" alt="img" height="60px" width="auto">
+                    <div class=" d-flex flex-column ps-2">
+                        <h5 id="titoloPlayer" class="m-0">Fat Funny Friend</h5>
+                        <p id="artistaPlayer" class="m-0">Maddie Zahm</p>
+                    </div>
+                    <i class="fa-regular fa-heart p-4"></i>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <i class="fa-solid fa-shuffle"></i>
+                            <i class="fa-solid fa-backward-step"></i>
+                            <i onclick="playPause()" id="playButton" class="fa-solid fa-circle-play"></i>
+                            <i class="fa-solid fa-forward-step"></i>
+                            <i class="fa-sharp fa-solid fa-repeat"></i>
+                        </div>
+                        <div class="d-flex justify-content-between" id="timer">
+                            <p id="inizio"></p>
+                            <progress id="progressBar" value="0" max="100"></progress>
+                            <p id="fine"></p>
+                        </div>
+                       
+                    </div>
+                    <div>
+                    </div>
+                </div>
+                <div class="volume-control mt-2 d-flex align-items-center pe-3">
+                    <i class="bi bi-mic"></i>
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="bi bi-speaker"></i>
+                    <i class="volume-icon fas fa-volume-up"></i>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1" id="volume">
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </div>
+
+            </div>
+        </footer>
+</body>
+
+</html>
