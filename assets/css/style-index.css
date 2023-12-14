@@ -216,6 +216,8 @@ ul {
 
 #homepage,
 #albumplaylist,
+#album,
+#search,
 #artist {
 	padding-left: 190px;
 }
