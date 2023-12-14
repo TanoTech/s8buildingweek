@@ -216,8 +216,10 @@ ul {
 
 #homepage,
 #albumplaylist,
-#artist {
+#artist,
+#album {
 	padding-left: 190px;
+
 }
 
 footer {
