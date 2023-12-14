@@ -298,7 +298,7 @@ function playPause(){
 		pause.classList.add("fa-circle-play")
 	}
 }
-
+//questa funzione prende le tracce dell'artista cappate a 5 ^_^
 async function getTopTracks(artistId) {
 	try {
 		const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=5`)
@@ -310,12 +310,14 @@ async function getTopTracks(artistId) {
 	}
 }
 
+//questa funzione formatta la durate delle canzoni in display nella pagina artista cosi da sembrare umane ^_^
 function formatDuration(durationInSeconds) {
 	const minutes = Math.floor(durationInSeconds / 60)
 	const seconds = durationInSeconds % 60;
 	return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
 }
 
+//questa funzione è molto bella è prende l'album dell'artista ^_^
 async function getAlbumsByArtist(artistId) {
 	try {
 		const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/albums`
@@ -330,6 +332,7 @@ async function getAlbumsByArtist(artistId) {
 	}
 }
 
+//questa è la funzione che prende l'id artista e lo popola con le 5 canzoni e gli album
 async function cercaArtista(id) {
 	svuotaHome()
 	document.getElementById("albumplaylist").classList.add("d-none")
@@ -342,7 +345,9 @@ async function cercaArtista(id) {
 	const artistName = artistData.name
 	const artistFans = artistData.nb_fan
 	const artistImageURL = artistData.picture
-	const imageBg = artistData.picture
+	const imageBg = artistData.picture_big
+
+	console.log(artistData)
 
 	const artistNameElement = document.getElementById("artist-name")
 	const artistFansElement = document.getElementById("artist-fans")
@@ -355,7 +360,8 @@ async function cercaArtista(id) {
 	artistImageElement.src = artistImageURL;
 	userLikedSongs.textContent = `Hai messo mi piace a ${randomLikes} canzoni`
 	bgVerified.style.backgroundImage = `url("${imageBg}")`
-	bgVerified.style.backgroundColor = 'rgba(0, 0, 0, 1.5)'
+	bgVerified.classList.add('opacity-25')
+
 
 	const topTracks = await getTopTracks(id)
 	const topTracksElement = document.getElementById("top-tracks")
@@ -381,7 +387,7 @@ async function cercaArtista(id) {
                 </div>
             `;
 			topTracksElement.appendChild(trackElement);
-		});
+		})
 	} else {
 		console.error("Elemento top-tracks non trovato nel DOM")
 	}
