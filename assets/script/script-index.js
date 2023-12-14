@@ -83,6 +83,7 @@ function svuotaHome() {
 	copiaHome = container.cloneNode(true);
 	container.innerHTML = "";
 }
+
 //ripristina Homepage
 function homePage() {
 	container.innerHTML = "";
@@ -183,6 +184,7 @@ function minutaggio(duration) {
 
 	return risultatoFormattato;
 }
+
 let player=document.getElementById("player")
 let mp3pos=document.getElementById("mp3")
 let immagineP=document.getElementById("immaginePlayer")
@@ -220,9 +222,8 @@ async function cercaMp3(url) {
 	});
 	document.getElementById("playButton").classList.remove("fa-circle-play")
 	document.getElementById("playButton").classList.add("fa-circle-pause")
-
-	
 }
+
 function playPause(){
 	let pause=document.getElementById("playButton")
 	console.log(player)
@@ -239,7 +240,6 @@ function playPause(){
 		pause.classList.add("fa-circle-play")
 	}
 }
-
 
 async function getTopTracks(artistId) {
 	try {
@@ -336,11 +336,11 @@ async function cercaArtista(id) {
 			albumDiv.classList.add("col-sm-6", "col-md-4", "col-lg-2")
 
 			albumDiv.innerHTML = `
-            <div onclick="cercaAlbum(${album.id})" class="card">
+            <div onclick="cercaAlbum(${album.id})" class='albumCover'>
                 <img src="${album.cover}" class="card-img-top img-fluid" alt="${album.title}">
-                <div class="card-body">
-                    <h5 class="card-title">${album.title}</h5>
-                    <p class="card-text">${albumYear} ${album.record_type}</p>
+                <div>
+                    <h5>${album.title}</h5>
+                    <p>${albumYear} ${album.record_type}</p>
                 </div>
             </div>
         `;
