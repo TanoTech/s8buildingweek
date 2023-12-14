@@ -14,6 +14,7 @@ let max = 120000; //id max playlist
 let urlApi = "https://deezerdevs-deezer.p.rapidapi.com/";
 let copiaHome = document.createElement("div"); //variabile che copia la homepage da richiamare ogni volta che si torna indietro
 let container = document.getElementById("homepage");
+
 let containerPlaylist = document.getElementById("albumplaylist");
 let containerAlbum=document.getElementById("album")
 let containerSearch=document.getElementById("search")
@@ -25,12 +26,11 @@ let titoloP = document.getElementById("titoloPlayer")
 let artistaP = document.getElementById("artistaPlayer")
 let albumListWrapper=document.getElementById("albumListWrapper")
 
-
 async function renderApi(url) {
 	const response = await fetch(urlApi + url, {
 		method: "GET",
 		headers: {
-			"X-RapidAPI-Key": "8bcbc2b046msh3dcbb714409d7fep1e2e85jsn9003429acc6f",
+			"X-RapidAPI-Key": "02778350a1msha229d8a0a38ebb9p1b524ejsn81bdca4a05f9",
 			"X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
 		},
 	});
@@ -52,8 +52,10 @@ async function popolaSection() {
 	<img src="${song.album.cover_medium}" alt="" srcset="">
 	`
 	console.log(song)
+
 	await playlistPopola();
 }
+
 //manca la funzione che rende maiuscola la prima lettera del titolo della playlist
 async function playlistPopola() {
 	let cardPlaylist = document.querySelectorAll("#playlistCard>div");
@@ -69,8 +71,8 @@ async function playlistPopola() {
 		cardPlaylist[i].addEventListener("click", () => caricaPlaylist(idbuoni[i]));
 	}
 }
-//crea il Visualizza Tutto
 
+//crea il Visualizza Tutto
 function viewMore(i, titolo) {
 	let numrandom = Math.floor(Math.random() * 4);
 	if (numrandom == i) {
@@ -98,6 +100,7 @@ function svuotaHome() {
 
 	container.innerHTML = "";
 }
+
 //ripristina Homepage
 function homePage() {
 	container.innerHTML = "";
@@ -155,11 +158,46 @@ function displayTracks(playlist,checkType) {
 	let albumWrapper=document.getElementById("canzoniAlbum")
 	playlistWrapper.innerHTML=""
 	albumWrapper.innerHTML=""
+}
+
+async function cercaAlbum(Album){
+	let titoliWrapper = document.getElementById("titoliAlbum");
+	containerAlbum.classList.remove("d-none")
+	containerPlaylist.classList.add("d-none")
+	containerArtist.classList.add("d-none")
+		const id= await renderApi("album/"+Album)
+		console.log(id)
+		titoliWrapper.innerHTML = ` 
+   		 <div class="ms-4 mx-4">
+        <img src="${id.cover_medium}" alt="">
+   		 </div>
+    		<div>
+    		 <div>
+				<h3 class="fs-5">Album</h3>
+				<h1 class="display-2">${id.title}</h1>
+			</div>
+    		<div>
+			<p><span>${id.artist.name}</span> - ${id.relase_date} _ ${id.nb_tracks
+			}Brani, ${minutaggio(id.duration)}  </p>
+			</div>
+    		</div>
+     
+    		`;
+
+		displayTracks(id,"album");
+}
+
+
+function displayTracks(playlist,checkType) {
+	let playlistWrapper = document.getElementById("playlist");
+	let albumWrapper=document.getElementById("canzoniAlbum")
 	console.log(checkType)
 	if(checkType=="playlist")
 	{
 	playlist.forEach((song) => {
+
 		playlistWrapper.innerHTML += `
+
      		<div class="row my-3">
             <div class="col-4">
               <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${song.title
@@ -179,11 +217,13 @@ function displayTracks(playlist,checkType) {
               <p class="h5 text-center">${minutaggio(song.duration)}</p>
            </div>
     	`;
+
 		
 	});
 	}else if(checkType=="album"){
 		playlist.tracks.data.forEach(song => {
 			albumWrapper.innerHTML += `
+
 				 <div class="row my-3">
 				<div class="col-4">
 				  <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${song.title
@@ -200,6 +240,7 @@ function displayTracks(playlist,checkType) {
 				  <p class="h5 text-center">${minutaggio(song.duration)}</p>
 			   </div>
 			`;
+
 		});
 	}
 }
@@ -289,10 +330,10 @@ async function cercaMp3(url) {
 	document.getElementById("playButton").classList.remove("fa-circle-play")
 	document.getElementById("playButton").classList.add("fa-circle-pause")
 
-
 }
 function playPause() {
 	let pause = document.getElementById("playButton")
+
 	console.log(player)
 	console.log(player.paused)
 	if (player.paused) {
@@ -306,7 +347,7 @@ function playPause() {
 		pause.classList.add("fa-circle-play")
 	}
 }
-
+//questa funzione prende le tracce dell'artista cappate a 5 ^_^
 async function getTopTracks(artistId) {
 	try {
 		const response = await fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/top?limit=5`)
@@ -318,12 +359,14 @@ async function getTopTracks(artistId) {
 	}
 }
 
+//questa funzione formatta la durate delle canzoni in display nella pagina artista cosi da sembrare umane ^_^
 function formatDuration(durationInSeconds) {
 	const minutes = Math.floor(durationInSeconds / 60)
 	const seconds = durationInSeconds % 60;
 	return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
 }
 
+//questa funzione è molto bella è prende l'album dell'artista ^_^
 async function getAlbumsByArtist(artistId) {
 	try {
 		const url = `https://striveschool-api.herokuapp.com/api/deezer/artist/${artistId}/albums`
@@ -338,13 +381,16 @@ async function getAlbumsByArtist(artistId) {
 	}
 }
 
+//questa è la funzione che prende l'id artista e lo popola con le 5 canzoni e gli album
 async function cercaArtista(id) {
 	svuotaHome()
 	document.getElementById("artist").classList.remove("d-none")
+
 	container.classList.add("d-none")
 	containerAlbum.classList.add("d-none")
 	containerPlaylist.classList.add("d-none")
 	containerSearch.classList.add("d-none")
+
 
 
 	let randomLikes = Math.round(Math.random() * 99) + 1
@@ -353,7 +399,9 @@ async function cercaArtista(id) {
 	const artistName = artistData.name
 	const artistFans = artistData.nb_fan
 	const artistImageURL = artistData.picture
-	const imageBg = artistData.picture
+	const imageBg = artistData.picture_big
+
+	console.log(artistData)
 
 	const artistNameElement = document.getElementById("artist-name")
 	const artistFansElement = document.getElementById("artist-fans")
@@ -366,6 +414,8 @@ async function cercaArtista(id) {
 	artistImageElement.src = artistImageURL;
 	userLikedSongs.textContent = `Hai messo mi piace a ${randomLikes} canzoni`
 	bgVerified.style.backgroundImage = `url("${imageBg}")`
+	bgVerified.classList.add('opacity-25')
+
 
 	const topTracks = await getTopTracks(id)
 	const topTracksElement = document.getElementById("top-tracks")
@@ -380,7 +430,7 @@ async function cercaArtista(id) {
                         <img  src="${track.album.cover_small}" alt="${track.title}" class="img-fluid">
                     </div>
                     <div class="col">
-                        <p>${track.title}</p>
+                        <p onclick="cercaMp3(${track.id})">${track.title}</p>
                     </div>
                     <div class="col-auto">
                         <p>${track.rank}</p>
@@ -391,7 +441,7 @@ async function cercaArtista(id) {
                 </div>
             `;
 			topTracksElement.appendChild(trackElement);
-		});
+		})
 	} else {
 		console.error("Elemento top-tracks non trovato nel DOM")
 	}
@@ -406,11 +456,13 @@ async function cercaArtista(id) {
 			albumDiv.classList.add("col-sm-6", "col-md-4", "col-lg-2")
 
 			albumDiv.innerHTML = `
+
             <div onclick="cercaAlbum(${album.id})" class="card">
+
                 <img src="${album.cover}" class="card-img-top img-fluid" alt="${album.title}">
-                <div class="card-body">
-                    <h5 class="card-title">${album.title}</h5>
-                    <p class="card-text">${albumYear} ${album.record_type}</p>
+                <div>
+                    <h5>${album.title}</h5>
+                    <p>${albumYear} ${album.record_type}</p>
                 </div>
             </div>
         `;

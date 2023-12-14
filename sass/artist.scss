@@ -1,18 +1,11 @@
 #artist {
-    margin: 3rem;
+    margin: 1rem;
     overflow: auto;
     h1, h2, h3, h4, h5, h6, a, p{
         color: white;
     }
-    #albumCard {
-        background-color: grey;
-    }
-    div .card-body p {
-        color: grey;
-    }
-
-    div .card-body {
-        background-color: rgba(0, 0, 0, 0.361);
+    h1{
+        padding-top: 4rem;
     }
 }
 
@@ -22,6 +15,48 @@
     object-fit: cover; 
 }
 
-#timer {
-    color: white;
+.albumCover {
+    background-color:rgba(0, 0, 0, 0.198);
+}
+
+#userLikedSong {
+   margin-left: 2rem;
+   img {
+    margin-right: 1rem;
+   }
+   @media screen and (max-width:800px) {
+    display: none;
+   }
+}
+
+#verificato, #artist-name, #artist-fans{
+	padding-left: 2rem;
+	padding-top: 2rem;
+}
+
+#artist-fans {
+    padding-bottom: 2rem;
+}
+
+#artistPlayBtn {
+    width: 3rem;
+}
+
+#primaryView {
+    margin-bottom: 2rem;
+}
+
+#top-tracks {
+    img {
+        margin-bottom: 1rem
+    }
+    img:hover {
+        opacity: 5%;
+        cursor: pointer;
+    }
+}
+
+#bgVerified {
+    opacity: 0.2;
+    background-repeat: no-repeat;
 }
