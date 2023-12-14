@@ -16,6 +16,7 @@ let copiaHome = document.createElement("div"); //variabile che copia la homepage
 let container = document.getElementById("homepage");
 let containerAlbum=document.getElementById("album")
 let containerPlaylist = document.getElementById("albumplaylist");
+let containerArtist = document.getElementById("artist")
 
 async function renderApi(url) {
 	const response = await fetch(urlApi + url, {
@@ -140,6 +141,7 @@ async function cercaAlbum(Album){
 	let titoliWrapper = document.getElementById("titoliAlbum");
 	containerAlbum.classList.remove("d-none")
 	containerPlaylist.classList.add("d-none")
+	containerArtist.classList.add("d-none")
 		const id= await renderApi("album/"+Album)
 		console.log(id)
 		titoliWrapper.innerHTML = ` 
@@ -329,6 +331,7 @@ async function cercaArtista(id) {
 	svuotaHome()
 	document.getElementById("albumplaylist").classList.add("d-none")
 	document.getElementById("artist").classList.remove("d-none")
+	containerAlbum.classList.add('d-none')
 
 	let randomLikes = Math.round(Math.random() * 99) + 1
 
