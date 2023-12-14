@@ -214,12 +214,6 @@ ul {
 	font-size: 12px;
 }
 
-#homepage,
-#albumplaylist,
-#artist {
-	padding-left: 190px;
-}
-
 footer {
 	z-index: 100000000;
 }
@@ -277,6 +271,7 @@ footer i:active {
 	margin-left: 200px;
 	margin-right: 200px;
 	z-index: 1000;
+	background-color: #000000;
 }
 
 #header ul,
@@ -288,7 +283,7 @@ footer i:active {
 #homepage,
 #albumplaylist {
 	margin-left: 15px;
-	margin-top: 60px;
+	margin-top: 49px;
 }
 
 #profileBg {

@@ -38,6 +38,7 @@ function getArtistInfo(data, data2) {
 
 	for (let i = 0; i < cap; i++) {
 		const element = data2.data[i];
+		console.log(element);
 
 		if (checkAlbum(albums, element)) {
 			let albumList = document.createElement("div");
@@ -45,6 +46,7 @@ function getArtistInfo(data, data2) {
 		<div>
 		    <p>${element.album.title}</p>
         <p>${element.album.type}</p>
+        <p>${element.artist.name}</p>
 		    <img src="${element.album.cover_small}" alt="">
 		  </div>`;
 
@@ -57,6 +59,7 @@ function getArtistInfo(data, data2) {
 		<div>
 		    <p>${element.title}</p>
 		    <p>${element.type}</p>
+        <p>${element.artist.name}</p>
 		    <img src="${element.album.cover_small}" alt="">
 		  </div>`;
 

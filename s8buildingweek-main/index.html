@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="assets/css/style-index.css">
   <link rel="stylesheet" href="assets/css/artist.css">
   <script src="assets/script/scriptNav.js" defer></script>
+  <link rel="stylesheet" href="assets/css/playlist.css">
 </head>
 
 <body>
@@ -197,7 +198,7 @@
       </div>
     </div>
 
-    <div id="header" class="d-flex justify-content-between align-items-center py-2 fixed-top">
+    <div id="header" class="d-flex justify-content-between align-items-center pe-2 fixed-top">
       <div>
         <i class="bi bi-arrow-left-circle h1 text-white"></i>
         <i class="bi bi-arrow-right-circle h1 text-white"></i>
@@ -205,7 +206,7 @@
 
       <div id="profileBg" class="d-flex bg-secondary">
         <li class="nav-item dropdown text-white d-flex align-items-center">
-          <img src="assets/imgs/meme_this_is_fine_dog.png" width="32" alt="">
+          <img src="assets/imgs/meme_this_is_fine_dog.png" width="32" alt="" class="me-2">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">Nome
             Utente</a>
@@ -481,8 +482,8 @@
 
     <div id="albumplaylist" class="d-none text-white">
 
-      <div id="hero" class="my-4 mx-4">
-        <div id="titoli" class="d-flex align-items-center ">
+      <div id="hero" class="">
+        <div id="titoli" class="d-flex align-items-center py-3">
 
         </div>
       </div>
@@ -490,24 +491,28 @@
 
 
 
-      <div id="playlistWrapper " class="bg-secondary">
+      <div id="playlistWrapper">
         <div id="icons" class="d-flex align-items-center">
-          <div class="m-3 d-flex align-items-center">
-            <i class="bi bi-play-circle-fill text-success mx-1 h1"></i>
+          <div class="m-3 d-flex align-items-center icon">
+            <i class="bi bi-play-circle-fill text-success mx-1 h1 "></i>
           </div>
 
           <div class="d-flex align-items-center">
-            <i class=" bi bi-suit-heart mx-2 h3"></i>
-            <i class="bi bi-download mx-2 h3"></i>
-            <div class="dropdown">
-              <button class="btn dropdown-toggle text-white" type="button" data-bs-toggle="dropdown"
+            <i class=" bi bi-suit-heart mx-2 h3 icon"></i>
+            <i class="bi bi-download mx-2 h3 icon"></i>
+            <div class="dropdown icon">
+              <button class="btn dropdown-toggle text-white icon" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 <i class="bi bi-list h3"></i>
               </button>
               <ul class="dropdown-menu bg-black">
-                <li><button class="dropdown-item  text-white" type="button">Action</button></li>
-                <li><button class="dropdown-item  text-white" type="button">Another action</button></li>
-                <li><button class="dropdown-item  text-white" type="button">Something else here</button>
+                <li><button class="dropdown-item  text-white" type="button">Aggiungi in coda</button></li>
+                <li><button class="dropdown-item  text-white" type="button">Vai a radio dell'artista</button></li>
+                <hr>
+                <li><button class="dropdown-item  text-white" type="button">Aggiungi a La tua libreria</button>
+                <li><button class="dropdown-item  text-white" type="button">Aggiungi alla playlist</button>
+                  <hr>
+                <li><button class="dropdown-item  text-white" type="button">condividi</button>
                 </li>
               </ul>
             </div>

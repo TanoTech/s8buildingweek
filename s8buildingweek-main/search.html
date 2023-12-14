@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+    defer></script>
+
+  <link rel="stylesheet" href="assets\css\search.css">
 </head>
+
 <body>
-    <h1>Ricerca Artista</h1>
+  <h1>Ricerca Artista</h1>
+  <div>
     <form id="artistForm">
       <label for="artistName">Nome dell'artista:</label>
-      <input type="text" id="artistName" required>
-      <button type="submit">Cerca</button>
-    </form>
-  
-    <div id="artistInfo">
-      <div id="artistNameDisplay">
-  
+      <div class="bg-secondary d-inline-block rounded p-1">
+        <i class="bi bi-search"></i>
+        <input type="text" id="artistName" class="border border-0 rounded bg-secondary" required>
+        <button type="submit" class="border border-0 bg-secondary">Cerca</button>
       </div>
-  
-  
+    </form>
+  </div>
+
+
+  <div id="artistInfo" class="d-flex">
+    <div id="artistNameDisplay">
+    </div>
+
+    <div>
       <h3>Canzoni:</h3>
       <ul id="albumListWrapper"></ul>
-  
-  
-      <ul id="songsList">
-      </ul>
+      <ul id="songsList"></ul>
     </div>
-  
-    <script src="assets/script/ricerca.js"></script>
+  </div>
+
+  <script src="assets/script/ricerca.js"></script>
 </body>
+
 </html>
