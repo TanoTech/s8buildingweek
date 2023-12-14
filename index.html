@@ -20,9 +20,16 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="assets/script/script-index.js" defer></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+        defer></script>
+
     <script src="https://kit.fontawesome.com/311c941856.js" crossorigin="anonymous" defer></script>
 
     <link rel="stylesheet" href="assets/css/style-index.css">
+    <link rel="stylesheet" href="assets/css/artist.css">
 </head>
 
 <body>
@@ -38,12 +45,12 @@
                 <li>
                     <a href="#">
                         <i class="fa-solid fa-house"></i>
-                        <span>Home</span>
+                        <span  onclick="window.location.reload()">Home</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="search.html">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <span>Cerca</span>
                     </a>
@@ -82,9 +89,7 @@
                 </li>
             </ul>
         </div>
-
         <hr>
-
         <div class="playlist">
             <ul>
                 <li>
@@ -193,7 +198,6 @@
         <div id="homepage" class="container ">
             <div>
 
-                <button>Parti canzone</button>
 
                 <div id="sponsored">
                     <h1></h1>
@@ -446,7 +450,7 @@
 
 
 
-        <div id="albumplaylist" class="d-none m-5">
+        <div id="albumplaylist" class="d-none text-white">
 
             <div id="hero" class="my-4 mx-4">
                 <div id="titoli" class="d-flex align-items-center ">
@@ -454,40 +458,41 @@
                 </div>
             </div>
 
-            <div id="icons" class="d-flex align-items-center">
-                <div class="m-3 d-flex align-items-center">
-                    <i class="bi bi-play-circle-fill text-success mx-1 h1"></i>
-                </div>
 
-                <div class="d-flex align-items-center">
-                    <i class=" bi bi-suit-heart mx-2 h3"></i>
-                    <i class="bi bi-download mx-2 h3"></i>
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle text-white" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <i class="bi bi-list h3"></i>
-                        </button>
-                        <ul class="dropdown-menu bg-black">
-                            <li><button class="dropdown-item  text-white" type="button">Action</button></li>
-                            <li><button class="dropdown-item  text-white" type="button">Another action</button></li>
-                            <li><button class="dropdown-item  text-white" type="button">Something else here</button>
-                            </li>
-                        </ul>
+
+
+            <div id="playlistWrapper " class="bg-secondary">
+                <div id="icons" class="d-flex align-items-center">
+                    <div class="m-3 d-flex align-items-center">
+                        <i class="bi bi-play-circle-fill text-success mx-1 h1"></i>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <i class=" bi bi-suit-heart mx-2 h3"></i>
+                        <i class="bi bi-download mx-2 h3"></i>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle text-white" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="bi bi-list h3"></i>
+                            </button>
+                            <ul class="dropdown-menu bg-black">
+                                <li><button class="dropdown-item  text-white" type="button">Action</button></li>
+                                <li><button class="dropdown-item  text-white" type="button">Another action</button></li>
+                                <li><button class="dropdown-item  text-white" type="button">Something else here</button>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-            </div>
-
-
-            <div id="playlistWrapper">
-                <div class="row">
-                    <h3 class="col-3">TITOLO</h3>
-                    <h3 class="col-3">ALBUM</h3>
-                    <h3 class="col-3">RIPRODUZIONI</h3>
-
-                    <h3 class="col-3"><i class="bi bi-clock"></i></h3>
+                <div class="row border-bottom border-white px-4">
+                    <h3 class="col-4"># TITOLO</h3>
+                    <h3 class="col-4 text-center">ALBUM</h3>
+                    <h3 class="col-3 text-center">RIPRODUZIONI</h3>
+                    <h3 class="col-1 text-center"><i class="bi bi-clock"></i></h3>
                 </div>
-                <div id="playlist">
+
+                <div id="playlist" class="px-4">
                 </div>
             </div>
         </div>
@@ -495,14 +500,16 @@
         <div id="artist" class="d-none ">
             <div id="artist-info">
                 <div id="verifiedArtist">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-patch-check-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
-                    </svg>
-                    <p>Aritsta verificato</p>
-                    <p id="artist-name"></p>
-                    <p id="artist-fans"></p>
+                    <div class="d-flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue"
+                            class="bi bi-patch-check-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
+                        </svg>
+                        <p class='text-white'>Aritsta verificato</p>
+                    </div>
+                    <h1 class="display-1 text-white" id="artist-name"></h1>
+                    <p class="text-white" id="artist-fans"></p>
                 </div>
                 <div id="artistPlay">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green"
@@ -510,22 +517,77 @@
                         <path
                             d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5" />
                     </svg>
-                    <p>Following</p>
+                    <button class="btn btn-outline-light ms-4 me-2"><small class="fw-bold">FOLLOWING</small></button>
                     <p>...</p>
                 </div>
-                <div id="popularSongArtist">
-                 <p>Popolari</p>
+                <div id="primaryView">
+                    <div id="popularSongArtist">
+                        <p>Popolari</p>
+                        <div id="top-tracks"></div>
+                    </div>
+                    <div id="userLikedSong">
+                        <img id="artist-image" class="float-left" src="" alt="">
+                        <p>Brani che ti piacciono</p>
+                        <p id="randomLike"></p>
+                    </div>
                 </div>
-                <div id="userLikedSong">
-                    <img id="artist-image" class="float-left" src="" alt="">
-                    <p>Brani che ti piacciono</p>
-                    <p id="randomLike"></p>
-                </div>
-                <div id="discography">
+                <div id="discography" class="bg-transparent">
                     <p>Discografia</p>
+                    <div class="container">
+                        <div class="row" id="albums-container">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <footer class="position-relative">
+            <div style="display: none;">
+                <audio controls id="player">
+                    <source id="mp3" src="" type="audio/mp3">
+                </audio>
+            </div>
+            <div class="container-fluid bg-dark d-flex p-0 justify-content-between position-fixed bottom-0">
+
+                <div class="text-white d-flex align-items-center p-3">
+                    <img id="immaginePlayer" src="assets/imgs/search/image-1.jpeg" alt="img" height="60px" width="auto">
+                    <div class=" d-flex flex-column ps-2">
+                        <h5 id="titoloPlayer" class="m-0">Fat Funny Friend</h5>
+                        <p id="artistaPlayer" class="m-0">Maddie Zahm</p>
+                    </div>
+                    <i class="fa-regular fa-heart p-4"></i>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <div>
+                        <div class="d-flex align-items-center">
+                            <i class="fa-solid fa-shuffle"></i>
+                            <i class="fa-solid fa-backward-step"></i>
+                            <i onclick="playPause()" id="playButton" class="fa-solid fa-circle-play"></i>
+                            <i class="fa-solid fa-forward-step"></i>
+                            <i class="fa-sharp fa-solid fa-repeat"></i>
+                        </div>
+                        <div class="d-flex justify-content-between" id="timer">
+                            <p id="inizio"></p>
+                            <progress id="progressBar" value="0" max="100"></progress>
+                            <p id="fine"></p>
+                        </div>
+                       
+                    </div>
+                    <div>
+                    </div>
+                </div>
+                <div class="volume-control mt-2 d-flex align-items-center pe-3">
+                    <i class="bi bi-mic"></i>
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="bi bi-speaker"></i>
+                    <i class="volume-icon fas fa-volume-up"></i>
+                    <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1" id="volume">
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </div>
+
+            </div>
+        </footer>
 </body>
 
 </html>
