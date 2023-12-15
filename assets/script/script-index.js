@@ -500,6 +500,7 @@ function formCerca() {
 
 }
 
+
 function cleanArtistName() {
 	let artistName = document.getElementById("artistName").value;
 	let nameEdited = artistName.replaceAll(" ", "_").toLowerCase();
