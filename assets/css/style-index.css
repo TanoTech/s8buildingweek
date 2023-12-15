@@ -36,16 +36,17 @@ ul {
 }
 
 .sidebar {
-	position: fixed;
+	
 	left: 0;
 	top: 0;
 	bottom: 0;
-	width: 200px;
+	padding-left: 20px;
+	width: 248px;
 	background-color: #000000;
-	padding: 24px;
-	height: 100vh;
-	overflow: auto;
 	z-index: 1000;
+	position: sticky;
+    overflow-y: scroll;
+    max-height: 100vh;
 }
 
 .sidebar .navigation ul {
@@ -131,15 +132,16 @@ ul {
 /*SIDEBAR DI DESTRA*/
 
 .sidebar-wrapper {
-	z-index: 1000;
-	top: 0;
-	position: fixed;
-	right: 250px;
+	z-index: 1;
+	
+	display:block;
+    position:fixed;
 	width: 200px;
 	height: 100%;
-	margin-right: -250px;
+	right: 0%;
 	overflow-y: auto;
 	background: #000000;
+	
 }
 
 .page-content-wrapper {
@@ -147,9 +149,7 @@ ul {
 	position: absolute;
 }
 
-.wrapper {
-	padding-right: 190px;
-}
+
 
 .sidebar-wrapper a {
 	color: #b3b3b3;
@@ -214,12 +214,11 @@ ul {
 	font-size: 12px;
 }
 
-#homepage,
-#albumplaylist,
-#album,
-#search,
-#artist {
-	padding-left: 190px;
+.totale {
+	margin-top: 65px;
+	margin-right: 196px;
+    max-width: 840px;
+	margin-bottom: 108px;
 }
 
 footer {
@@ -227,15 +226,39 @@ footer {
 }
 
 footer i {
-    color: white;
+    color: rgb(152, 151, 151);
     padding: 10px;
     font-size: 23px;
+    transition: color 0.3s ease;
 }
 #play {
     font-size: 40px;
 }
 #volume {
-    accent-color: white;
+    accent-color: rgb(255, 255, 255);
+}
+footer i:hover {
+    color: hsl(0, 0%, 100%);
+}
+footer i:active {
+    color: green;
+}
+#inizio {
+    color: white;
+}
+#fine {
+    color: white;
+}
+#progressBar {
+    accent-color: green;
+
+}
+#playButton {
+    font-size: 40px;
+    color: rgb(152, 151, 151);
+}
+#playButton:hover {
+    color: hsl(0, 0%, 100%);
 }
 
 #primaryView {
@@ -249,4 +272,80 @@ footer i {
 #userLikedSong {
 	margin-left: 4rem;
 	margin-top: 3rem;
+}
+
+#timer {
+    color: white;
+}
+#sponsored{
+	background: rgb(0,0,0);
+	background: linear-gradient(49deg, rgba(0,0,0,1) 0%, rgba(32,32,32,1) 100%);
+	color: white;
+	
+	
+	
+}
+#sponsored img{
+	padding: 10px;
+	
+}
+#sponsored h1{
+	font-size: 3em;
+	font-weight: bold;
+	
+}
+h4{
+	font-size: 1em;
+}
+.bottoneSponsored{
+	background-color: transparent;
+	border-radius: 30px 30px 30px 30px;
+	padding:10px 20px 10px 20px
+}
+.bottoneSponsored:hover{
+	background-color: #25f370;
+}
+h3{
+	font-weight: bold;
+	color: white;
+	margin:20px 0px 20px 0px;
+}
+
+.card{
+	padding: 10px;
+	color: white;
+	background-color: #202020;
+}
+.card h4{
+	font-size: 0.9em;
+	font-weight: bold;
+}
+.card-text{
+	font-size: 0.8em;
+	color:white;
+}
+#playlistCard div{
+	max-width: 32%;
+	margin-right: 10px;
+	background-color: #2D2D2D;
+	display: flex;
+	align-items: end;
+}
+#playlistCard>div>p{
+	padding-left: 20px;
+	font-weight: bold;
+	
+}
+.testop{
+	color:gray;
+	font-size: 0.9em;
+}
+
+#album{
+	background: rgb(40, 159, 15);
+	background: linear-gradient(
+        180deg,
+        rgba(39, 159, 15, 0.4) 0%,
+        rgba(18, 18, 18, 1) 90%
+    );
 }
