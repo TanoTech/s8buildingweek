@@ -27,7 +27,6 @@
     <script src="https://kit.fontawesome.com/311c941856.js" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="assets/css/style-index.css">
     <link rel="stylesheet" href="assets/css/artist.css">
-
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/search.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
@@ -58,7 +57,7 @@
                         <span>Cerca</span>
                     </a>
                 </li>
-
+                
                 <li>
                     <a href="#">
                         <i class="fa-solid fa-book"></i>
@@ -263,222 +262,224 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <div class="d-flex justify-content-between align-items-baseline ">
-                    <h3>Novità</h3>
-                    <p onclick="viewMore(0,`Novità`)">VISUALIZZA TUTTO</p>
+            <div id="nascondiMobile" class="d-none d-md-block">
+                <div>
+                    <div class="d-flex justify-content-between align-items-baseline ">
+                        <h3>Novità</h3>
+                        <p onclick="viewMore(0,`Novità`)">VISUALIZZA TUTTO</p>
+                    </div>
+                    <div id="playlist0" class=" row justify-content-center align-items-center g-2">
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-1.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Title</h4>
+                                    <p class="card-text">Text</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+    
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-2.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">La tua estate è un film</h4>
+                                    <p class="card-text">Playlist estiva</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-3.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Massima concentrazione</h4>
+                                    <p class="card-text">Playlist per studiare</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-4.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Peaceful Piano</h4>
+                                    <p class="card-text">Playlist piano</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-5.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">lofi beats</h4>
+                                    <p class="card-text">Playlist lofi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
                 </div>
-                <div id="playlist0" class=" row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-1.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Title</h4>
-                                <p class="card-text">Text</p>
+                <div>
+                    <div class="d-flex justify-content-between align-items-baseline ">
+                        <h3>Altro di ciò che ti piace</h3>
+                        <p onclick="viewMore(1,`Altro di ciò che ti piace`)">VISUALIZZA TUTTO</p>
+                    </div>
+                    <div id="playlist1" class="row justify-content-center align-items-center g-2">
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-6.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Jazz Vibes</h4>
+                                    <p class="card-text">Playlist jazz</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-7.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Caffè del buongiorno</h4>
+                                    <p class="card-text">Playlist mattutina</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-8.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Sanguegiovane</h4>
+                                    <p class="card-text">Text</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-9.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Canta sotto la doccia</h4>
+                                    <p class="card-text">Playlist che ti dà la carica</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-10.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Operazione buonumore</h4>
+                                    <p class="card-text">Playlist divertente</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-2.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">La tua estate è un film</h4>
-                                <p class="card-text">Playlist estiva</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-3.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Massima concentrazione</h4>
-                                <p class="card-text">Playlist per studiare</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-4.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Peaceful Piano</h4>
-                                <p class="card-text">Playlist piano</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-5.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">lofi beats</h4>
-                                <p class="card-text">Playlist lofi</p>
-                            </div>
-                        </div>
-                    </div>
+    
                 </div>
-
-            </div>
-            <div>
-                <div class="d-flex justify-content-between align-items-baseline ">
-                    <h3>Altro di ciò che ti piace</h3>
-                    <p onclick="viewMore(1,`Altro di ciò che ti piace`)">VISUALIZZA TUTTO</p>
+                <div>
+                    <div class="d-flex justify-content-between align-items-baseline ">
+                        <h3>Creato per te</h3>
+                        <p onclick="viewMore(2,`Creato per te`)">VISUALIZZA TUTTO</p>
+                    </div>
+                    <div id="playlist2" class="row justify-content-center align-items-center g-2">
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-11.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Mercury</h4>
+                                    <p class="card-text">Imagine Dragons</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-12.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Respira</h4>
+                                    <p class="card-text">Samurai Jay</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-13.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Pulizie di Casa</h4>
+                                    <p class="card-text">Playlist per Pulire</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-14.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Allenamento a Casa</h4>
+                                    <p class="card-text">Playlist Allenamento</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-15.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Casa Dolce Casa</h4>
+                                    <p class="card-text">Playlist Chill</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
                 </div>
-                <div id="playlist1" class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-6.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Jazz Vibes</h4>
-                                <p class="card-text">Playlist jazz</p>
+                <div>
+                    <div class="d-flex justify-content-between align-items-baseline ">
+                        <h3>Migliori Playlist</h3>
+                        <p onclick="viewMore(3,`Migliori Playlist`)">VISUALIZZA TUTTO</p>
+                    </div>
+                    <div id="playlist3" class="row justify-content-center align-items-center g-2">
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-16.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Lavorare da Casa</h4>
+                                    <p class="card-text">Playlist fancazzisti</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-17.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">New Music Friday</h4>
+                                    <p class="card-text">Novità di Venerdì</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-18.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Estate 2022</h4>
+                                    <p class="card-text">Playlist estate</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-19.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">Street Culto</h4>
+                                    <p class="card-text">Playlist Rap</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card">
+                                <img class="card-img-top" src="../assets/imgs/main/image-5.jpg" alt="Title" />
+                                <div class="card-body">
+                                    <h4 class="card-title">lofi beats</h4>
+                                    <p class="card-text">Playlist lofi</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-7.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Caffè del buongiorno</h4>
-                                <p class="card-text">Playlist mattutina</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-8.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Sanguegiovane</h4>
-                                <p class="card-text">Text</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-9.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Canta sotto la doccia</h4>
-                                <p class="card-text">Playlist che ti dà la carica</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-10.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Operazione buonumore</h4>
-                                <p class="card-text">Playlist divertente</p>
-                            </div>
-                        </div>
-                    </div>
+    
                 </div>
-
-            </div>
-            <div>
-                <div class="d-flex justify-content-between align-items-baseline ">
-                    <h3>Creato per te</h3>
-                    <p onclick="viewMore(2,`Creato per te`)">VISUALIZZA TUTTO</p>
-                </div>
-                <div id="playlist2" class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-11.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Mercury</h4>
-                                <p class="card-text">Imagine Dragons</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-12.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Respira</h4>
-                                <p class="card-text">Samurai Jay</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-13.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Pulizie di Casa</h4>
-                                <p class="card-text">Playlist per Pulire</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-14.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Allenamento a Casa</h4>
-                                <p class="card-text">Playlist Allenamento</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-15.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Casa Dolce Casa</h4>
-                                <p class="card-text">Playlist Chill</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div>
-                <div class="d-flex justify-content-between align-items-baseline ">
-                    <h3>Migliori Playlist</h3>
-                    <p onclick="viewMore(3,`Migliori Playlist`)">VISUALIZZA TUTTO</p>
-                </div>
-                <div id="playlist3" class="row justify-content-center align-items-center g-2">
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-16.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Lavorare da Casa</h4>
-                                <p class="card-text">Playlist fancazzisti</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-17.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">New Music Friday</h4>
-                                <p class="card-text">Novità di Venerdì</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-18.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Estate 2022</h4>
-                                <p class="card-text">Playlist estate</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-19.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">Street Culto</h4>
-                                <p class="card-text">Playlist Rap</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <img class="card-img-top" src="../assets/imgs/main/image-5.jpg" alt="Title" />
-                            <div class="card-body">
-                                <h4 class="card-title">lofi beats</h4>
-                                <p class="card-text">Playlist lofi</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
 
