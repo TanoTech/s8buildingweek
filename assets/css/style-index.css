@@ -215,12 +215,11 @@ ul {
 }
 
 #homepage,
-#albumplaylist,
-
 #album,
 #search,
 #artist {
-	padding-left: 190px;
+	padding-left: 210px;
+	padding-right: 20px;
 }
 
 footer {
@@ -228,39 +227,38 @@ footer {
 }
 
 footer i {
-    color: rgb(152, 151, 151);
-    padding: 10px;
-    font-size: 23px;
-    transition: color 0.3s ease;
+	color: rgb(152, 151, 151);
+	padding: 10px;
+	font-size: 23px;
+	transition: color 0.3s ease;
 }
 #play {
-    font-size: 40px;
+	font-size: 40px;
 }
 #volume {
-    accent-color: rgb(255, 255, 255);
+	accent-color: rgb(255, 255, 255);
 }
 footer i:hover {
-    color: hsl(0, 0%, 100%);
+	color: hsl(0, 0%, 100%);
 }
 footer i:active {
-    color: green;
+	color: green;
 }
 #inizio {
-    color: white;
+	color: white;
 }
 #fine {
-    color: white;
+	color: white;
 }
 #progressBar {
-    accent-color: green;
-
+	accent-color: green;
 }
 #playButton {
-    font-size: 40px;
-    color: rgb(152, 151, 151);
+	font-size: 40px;
+	color: rgb(152, 151, 151);
 }
 #playButton:hover {
-    color: hsl(0, 0%, 100%);
+	color: hsl(0, 0%, 100%);
 }
 
 #primaryView {
@@ -277,5 +275,5 @@ footer i:active {
 }
 
 #timer {
-    color: white;
+	color: white;
 }
