@@ -2,7 +2,9 @@
     display: none;
 }
 
-
+#totale {
+    padding-left: 3rem;
+}
 
 @media screen and (max-width: 820px) {
 
@@ -25,11 +27,16 @@
         background-color: black;
         position: sticky;
         bottom: 0;
+        padding: 0;
         left: 0;
-        width: 120%;
-
+        width: 136%;
         z-index: 10000000000;
         padding-left: 5rem;
+    }
+
+    #playerMobile {
+        width: 100%;
+        margin: 0
     }
 
     .ResponsiveMobile {
@@ -61,6 +68,11 @@
 
         overflow: hidden;
     }
+
+    #header {
+        margin: 0;
+        width: 130vw;
+    }
 }
 
 @media screen and (max-width: 587px) {
@@ -76,7 +88,7 @@
     .cardTelefono {
         display: flex;
         img {
-            flex-basis: 10%;
+           width: 50vw;
         }
     }
 
