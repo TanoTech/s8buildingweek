@@ -1,51 +1,71 @@
 /* HEADER */
 #header {
+	margin-left: 246px;
+	z-index: 2;
+	max-width: 833px;
 
-    
-    margin-left: 246px;
-    z-index: 2;
-    max-width: 833px;
-
-    background-color: #000000;
+	background-color: #000000;
 }
 
 #header ul,
 #header li {
-    list-style-type: none;
+	list-style-type: none;
 
-    z-index: 1000000005;
+	z-index: 1000000005;
 }
 
-
-
-
 #profileBg {
-    border-radius: 20px;
-    height: 2.4em;
-    padding: 0.4em;
+	border-radius: 20px;
+	height: 2.4em;
+	padding: 0.4em;
+}
+
+#albumplaylist,
+#album {
+	background: rgb(40, 159, 15);
+	background: linear-gradient(
+		180deg,
+		rgba(39, 159, 15, 0.4) 0%,
+		rgba(18, 18, 18, 1) 20%
+	);
+	margin-top: 25px;
+}
+
+#playlist h3 {
+	margin: 0;
+}
+#album h3 {
+	margin: 0;
 }
 
 /*basta*/
 
 #playlistWrapper {
-    background: rgba(18, 18, 18, 1);
-}
-
-.icon:hover {
-    color: white;
+	background: rgba(18, 18, 18, 1);
 }
 
 .icon {
-    color: rgb(197, 197, 197);
+	color: rgb(197, 197, 197);
 }
+
+.iconPlayer {
+	color: #157247;
+}
+
+.icon:hover {
+	color: white;
+}
+
+.iconPlayer:hover {
+	color: #198754;
+}
+
 #albumplaylist h3 {
-    font-size: 16px;
+	font-size: 16px;
 }
 #playlist h3 {
-    font-size: 16px;
+	font-size: 16px;
 }
 #playlist p {
-    font-size: 16px;
+	font-size: 16px;
 }
-
-
