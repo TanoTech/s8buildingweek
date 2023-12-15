@@ -1,47 +1,84 @@
 /* HEADER */
 #header {
-    margin-left: 200px;
-    margin-right: 200px;
-    z-index: 1000;
-    background-color: #000000;
+	margin-left: 200px;
+	margin-right: 180px;
+	height: 8%;
+	z-index: 1000;
+	background-color: #000000;
 }
 
 #header ul,
 #header li {
-    list-style-type: none;
-    z-index: 1001;
+	list-style-type: none;
+	z-index: 1001;
 }
 
-#homepage,
 #albumplaylist {
-    margin-left: 15px;
-    margin-top: 49px;
+	margin-left: 15px;
+	margin-top: 49px;
+	padding-left: 180px;
 }
-
 #profileBg {
-    border-radius: 20px;
-    height: 2.4em;
-    padding: 0.4em;
+	border-radius: 20px;
+	height: 2.4em;
+	padding: 0.4em;
 }
 
-/*basta*/
+/*playlist*/
 #hero {
-    background: rgb(40, 159, 15);
-    background: linear-gradient(
-        180deg,
-        rgba(39, 159, 15, 0.4) 0%,
-        rgba(18, 18, 18, 1) 90%
-    );
-}
-
-#albumplaylist {
-    padding-left: 180px;
+	background: rgb(40, 159, 15);
+	background: linear-gradient(
+		180deg,
+		rgba(39, 159, 15, 0.4) 0%,
+		rgba(18, 18, 18, 1) 90%
+	);
 }
 
 #playlistWrapper {
-    background: rgba(18, 18, 18, 1);
+	background: rgba(18, 18, 18, 1);
+}
+
+.icon {
+	color: rgb(121, 117, 117);
+}
+
+.iconPlayer {
+	color: #167247;
 }
 
 .icon:hover {
-    color: white;
+	color: white;
+}
+
+.iconPlayer:hover {
+	color: #198754;
+}
+
+#albumplaylist h3 {
+	font-size: 16px;
+}
+
+#playlist p {
+	font-size: 16px;
+}
+
+@media screen and (max-width: 820px) {
+	#hero {
+		width: 100%;
+	}
+	#albumplaylist {
+		padding-right: 0px;
+		padding-left: 0px;
+		margin: 0px;
+		width: 100%;
+	}
+	.wrapper {
+		padding-right: 0px;
+		width: 100%;
+	}
+	#header {
+		width: 100vw;
+		height: 60px;
+		margin: 0;
+	}
 }
