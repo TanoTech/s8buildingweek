@@ -47,11 +47,6 @@
         height: auto;
     }
 
-    .wrapper {
-        padding: 0;
-        min-height: 100vh;
-    }
-
     .card {
         width: auto;
         height: auto;
@@ -66,8 +61,6 @@
 
         overflow: hidden;
     }
-
-   
 }
 
 @media screen and (max-width: 587px) {
@@ -79,5 +72,13 @@
         margin-left: 3rem;
         width: 110vw;
     }
+
+    .cardTelefono {
+        display: flex;
+        img {
+            flex-basis: 10%;
+        }
+    }
+
 }
 
