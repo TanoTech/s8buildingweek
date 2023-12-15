@@ -16,15 +16,15 @@ let copiaHome = document.createElement("div"); //variabile che copia la homepage
 let container = document.getElementById("homepage");
 
 let containerPlaylist = document.getElementById("albumplaylist");
-let containerAlbum=document.getElementById("album")
-let containerSearch=document.getElementById("search")
-let containerArtist=document.getElementById("artist")
+let containerAlbum = document.getElementById("album")
+let containerSearch = document.getElementById("search")
+let containerArtist = document.getElementById("artist")
 let player = document.getElementById("player")
 let mp3pos = document.getElementById("mp3")
 let immagineP = document.getElementById("immaginePlayer")
 let titoloP = document.getElementById("titoloPlayer")
 let artistaP = document.getElementById("artistaPlayer")
-let albumListWrapper=document.getElementById("albumListWrapper")
+let albumListWrapper = document.getElementById("albumListWrapper")
 
 async function renderApi(url) {
 	const response = await fetch(urlApi + url, {
@@ -44,7 +44,7 @@ async function popolaSection() {
 	let random = Math.floor(Math.random() * songs.data.length);
 	let song = songs.data[random];
 	let homesponsor = document.getElementById("sponsored")
-	homesponsor.innerHTML=`<h1 onclick="cercaMp3(${song.id})">${song.title}</h1>
+	homesponsor.innerHTML = `<h1 onclick="cercaMp3(${song.id})">${song.title}</h1>
 	<h4 onclick="cercaArtista(${song.artist.id})">${song.artist.name}</h4>
 	<h4>Ascolta il nuovo singolo di: ${song.artist.name}</h4>
 	<input onclick="cercaMp3(${song.id})" type="button" value="PLAY">
@@ -130,10 +130,10 @@ async function caricaPlaylist(numPlaylist) {
 
 function displayTitoli(items) {
 	let titoliWrapper = document.getElementById("titoli");
-	
-		let playlist = items.tracks.data;
 
-		titoliWrapper.innerHTML = ` 
+	let playlist = items.tracks.data;
+
+	titoliWrapper.innerHTML = ` 
    		 <div class="ms-4 mx-4">
         <img src="${items.picture_medium}" alt="">
    		 </div>
@@ -144,30 +144,30 @@ function displayTitoli(items) {
 			</div>
     		<div>
 			<p><span>Pippo</span> - ${items.creation_date} ${items.nb_tracks
-			}Brani, ${minutaggio(items.duration)}  </p>
+		}Brani, ${minutaggio(items.duration)}  </p>
 			</div>
     		</div>
      
     		`;
 
-		displayTracks(playlist,"playlist");
+	displayTracks(playlist, "playlist");
 }
 
-function displayTracks(playlist,checkType) {
+function displayTracks(playlist, checkType) {
 	let playlistWrapper = document.getElementById("playlist");
-	let albumWrapper=document.getElementById("canzoniAlbum")
-	playlistWrapper.innerHTML=""
-	albumWrapper.innerHTML=""
+	let albumWrapper = document.getElementById("canzoniAlbum")
+	playlistWrapper.innerHTML = ""
+	albumWrapper.innerHTML = ""
 }
 
-async function cercaAlbum(Album){
+async function cercaAlbum(Album) {
 	let titoliWrapper = document.getElementById("titoliAlbum");
 	containerAlbum.classList.remove("d-none")
 	containerPlaylist.classList.add("d-none")
 	containerArtist.classList.add("d-none")
-		const id= await renderApi("album/"+Album)
-		console.log(id)
-		titoliWrapper.innerHTML = ` 
+	const id = await renderApi("album/" + Album)
+	console.log(id)
+	titoliWrapper.innerHTML = ` 
    		 <div class="ms-4 mx-4">
         <img src="${id.cover_medium}" alt="">
    		 </div>
@@ -178,50 +178,53 @@ async function cercaAlbum(Album){
 			</div>
     		<div>
 			<p><span>${id.artist.name}</span> - ${id.relase_date} _ ${id.nb_tracks
-			}Brani, ${minutaggio(id.duration)}  </p>
+		}Brani, ${minutaggio(id.duration)}  </p>
 			</div>
     		</div>
      
     		`;
 
-		displayTracks(id,"album");
+	displayTracks(id, "album");
 }
 
 
-function displayTracks(playlist,checkType) {
+function displayTracks(playlist, checkType) {
 	let playlistWrapper = document.getElementById("playlist");
-	let albumWrapper=document.getElementById("canzoniAlbum")
+	let albumWrapper = document.getElementById("canzoniAlbum")
+	let i = 0;
 	console.log(checkType)
-	if(checkType=="playlist")
-	{
-	playlist.forEach((song) => {
-		let numeroAscoltoRandom = Math.floor(Math.random() * 1000000) + 100000
+	if (checkType == "playlist") {
+		playlist.forEach((song) => {
+			let numeroAscoltoRandom = Math.floor(Math.random() * 1000000) + 100000
 
-		playlistWrapper.innerHTML += `
-
-     		<div class="row my-3">
+			playlistWrapper.innerHTML += `
+             <div class="row my-3">
+          <div class="col-1">
+          <p>${i}</p>
+          </div>
+		  
             <div class="col-4">
               <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${song.title
-			}</h3>
+				}</h3>
               <h3 onclick="cercaArtista(${song.artist.id
-			})" class="fs-6 fw-light">${song.artist.name}</h3>
+				})" class="fs-6 fw-light">${song.artist.name}</h3>
             </div>
-            <div class="col-4">
+            <div class="col-3">
               <p onclick="cercaAlbum(${song.album.id
-			})" class="h5 text-center ">${song.album.title}</p>
+				})" class="h5 text-center ">${song.album.title}</p>
             </div>
             <div class="col-3">
               <p class="h5 text-center">${numeroAscoltoRandom}</p>
             </div>
-            
+
             <div class="col-1">
               <p class="h5 text-center">${minutaggio(song.duration)}</p>
            </div>
     	`;
+		i++
+});
 
-		
-	});
-	}else if(checkType=="album"){
+	} else if (checkType == "album") {
 		playlist.tracks.data.forEach(song => {
 			albumWrapper.innerHTML += `
 
@@ -245,19 +248,19 @@ function displayTracks(playlist,checkType) {
 		});
 	}
 }
-async function cercaAlbum(Album){
+async function cercaAlbum(Album) {
 	let titoliWrapper = document.getElementById("titoliAlbum");
 	containerAlbum.classList.remove("d-none")
 	containerPlaylist.classList.add("d-none")
 	container.classList.add("d-none")
-	
+
 	containerArtist.classList.add("d-none")
-	
+
 	containerSearch.classList.add("d-none")
 
-		const id= await renderApi("album/"+Album)
-		console.log(id)
-		titoliWrapper.innerHTML = ` 
+	const id = await renderApi("album/" + Album)
+	console.log(id)
+	titoliWrapper.innerHTML = ` 
    		 <div class="ms-4 mx-4">
         <img src="${id.cover_medium}" alt="">
    		 </div>
@@ -268,14 +271,14 @@ async function cercaAlbum(Album){
 			</div>
     		<div>
 			<p><span>${id.artist.name}</span> - ${id.release_date} _ ${id.nb_tracks
-			}Brani, ${minutaggio(id.duration)}  </p>
+		}Brani, ${minutaggio(id.duration)}  </p>
 			</div>
     		</div>
      
     		`;
-			console.log(id.release_date)
+	console.log(id.release_date)
 
-		displayTracks(id,"album");
+	displayTracks(id, "album");
 }
 
 function minutaggio(duration) {
@@ -472,7 +475,7 @@ async function cercaArtista(id) {
 	}
 }
 
-function formCerca(){
+function formCerca() {
 	container.classList.add("d-none")
 	containerAlbum.classList.add("d-none")
 	containerArtist.classList.add("d-none")
@@ -480,14 +483,14 @@ function formCerca(){
 	containerSearch.classList.remove("d-none")
 	document.getElementById("artistForm").addEventListener("submit", async function (event) {
 
-		
-		
-	event.preventDefault();
-	let artistName = cleanArtistName();
-	let data = await renderApi("search?q=" + artistName);
-	let dataArtist = data.data[0].artist
-	getArtistInfo(dataArtist, data);
-	document.getElementById("artistName").value=""
+
+
+		event.preventDefault();
+		let artistName = cleanArtistName();
+		let data = await renderApi("search?q=" + artistName);
+		let dataArtist = data.data[0].artist
+		getArtistInfo(dataArtist, data);
+		document.getElementById("artistName").value = ""
 	});
 }
 
@@ -524,7 +527,7 @@ function getArtistInfo(data, data2) {
 	for (let i = 0; i < cap; i++) {
 		let element = data2.data[i];
 
-		
+
 
 		if (artista == element.artist.name) {
 			let songName = document.createElement("div");
@@ -541,13 +544,13 @@ function getArtistInfo(data, data2) {
 			songsList.appendChild(songName);
 		}
 	}
-	let i2=0
-	let contatore=0
-	do{
+	let i2 = 0
+	let contatore = 0
+	do {
 
 		let element2 = data2.data[i2];
 		if (checkAlbum(albums, element2)) {
-			
+
 			albumListWrapper.innerHTML += `
 		  <div onclick="cercaAlbum(${element2.album.id})" class="col">
 		  <div class="card">
@@ -563,7 +566,7 @@ function getArtistInfo(data, data2) {
 		}
 		i2++
 	}
-	while(contatore<5)
+	while (contatore < 5)
 }
 
 function checkAlbum(albums, element) {
