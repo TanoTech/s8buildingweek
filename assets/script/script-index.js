@@ -44,6 +44,7 @@ async function popolaSection() {
 	let random = Math.floor(Math.random() * songs.data.length);
 	let song = songs.data[random];
 	let homesponsor = document.getElementById("sponsored")
+
 	homesponsor.innerHTML = `<img class="img-fluid "src="${song.album.cover_medium}" alt="" srcset="">
 	<div class="p-3 d-flex flex-column justify-content-between ">
 		<h4>ALBUM</h4>
@@ -60,7 +61,8 @@ async function popolaSection() {
 	`
 	console.log(song)
 
-	//await playlistPopola();
+	await playlistPopola();
+
 }
 
 //manca la funzione che rende maiuscola la prima lettera del titolo della playlist
@@ -124,8 +126,6 @@ function aggiungiClickPlaylist() {
 aggiungiClickPlaylist();
 popolaSection();
 
-/*let numPlaylist = 108243;
-let urlApi = "https://deezerdevs-deezer.p.rapidapi.com/";*/
 
 async function caricaPlaylist(numPlaylist) {
 	svuotaHome();
@@ -159,7 +159,6 @@ function displayTitoli(items) {
 
 	displayTracks(playlist, "playlist");
 }
-
 
 
 async function cercaAlbum(Album) {
@@ -206,11 +205,13 @@ function displayTracks(playlist, checkType) {
           </div>
 		  
             <div class="col-4">
+
               <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${song.title}</h3>
               <h3 onclick="cercaArtista(${song.artist.id})" class="fs-6 fw-light">${song.artist.name}</h3>
             </div>
             <div class="col-3">
               <p onclick="cercaAlbum(${song.album.id})" class="h5 text-center ">${song.album.title}</p>
+
             </div>
             <div class="col-3">
               <p class="h5 text-center">${numeroAscoltoRandom}</p>
@@ -220,8 +221,10 @@ function displayTracks(playlist, checkType) {
               <p class="h5 text-center">${minutaggio(song.duration)}</p>
            </div>
     	`;
+
 			i++
 		});
+
 
 	} else if (checkType == "album") {
 		playlist.tracks.data.forEach(song => {
@@ -231,6 +234,7 @@ function displayTracks(playlist, checkType) {
 				 <div class="col-4">
 				  <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${song.title}</h3>
 				  <h3 onclick="cercaArtista(${song.artist.id})" class="fs-6 fw-light">${song.artist.name}</h3>
+
 				</div>
 				
 				<div class="col-3">
@@ -383,7 +387,9 @@ async function getAlbumsByArtist(artistId) {
 	}
 }
 
-//questa è la funzione che prende l'id artista e lo popola con le 5 canzoni e gli album
+
+//questa è la funzione che prende l'id artista e lo popola con le 5 canzoni e gli album correlati ^_^
+
 async function cercaArtista(id) {
 	svuotaHome()
 	document.getElementById("artist").classList.remove("d-none")
@@ -482,7 +488,6 @@ function formCerca() {
 	document.getElementById("artistForm").addEventListener("submit", async function (event) {
 
 
-
 		event.preventDefault();
 		let artistName = cleanArtistName();
 		let data = await renderApi("search?q=" + artistName);
@@ -491,6 +496,7 @@ function formCerca() {
 		document.getElementById("artistName").value = ""
 	});
 }
+
 
 function cleanArtistName() {
 	let artistName = document.getElementById("artistName").value;

@@ -1,17 +1,21 @@
 /* HEADER */
 #header {
+
     
     margin-left: 246px;
     z-index: 2;
     max-width: 833px;
+
     background-color: #000000;
 }
 
 #header ul,
 #header li {
     list-style-type: none;
+
     z-index: 1000000005;
 }
+
 
 
 
@@ -22,12 +26,6 @@
 }
 
 /*basta*/
-#hero {
-   
-    
-}
-
-
 
 #playlistWrapper {
     background: rgba(18, 18, 18, 1);
@@ -36,6 +34,7 @@
 .icon:hover {
     color: white;
 }
+
 .icon {
     color: rgb(197, 197, 197);
 }
@@ -48,3 +47,5 @@
 #playlist p {
     font-size: 16px;
 }
+
+

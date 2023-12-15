@@ -214,11 +214,13 @@ ul {
 	font-size: 12px;
 }
 
+
 .totale {
 	margin-top: 65px;
 	margin-right: 196px;
     max-width: 840px;
 	margin-bottom: 108px;
+
 }
 
 footer {
@@ -276,6 +278,7 @@ footer i:active {
 
 #timer {
     color: white;
+
 }
 #sponsored{
 	background: rgb(0,0,0);
@@ -349,3 +352,4 @@ h3{
         rgba(18, 18, 18, 1) 90%
     );
 }
+
