@@ -44,16 +44,25 @@ async function popolaSection() {
 	let random = Math.floor(Math.random() * songs.data.length);
 	let song = songs.data[random];
 	let homesponsor = document.getElementById("sponsored")
-	homesponsor.innerHTML = `<h1 onclick="cercaMp3(${song.id})">${song.title}</h1>
-	<h4 onclick="cercaArtista(${song.artist.id})">${song.artist.name}</h4>
-	<h4>Ascolta il nuovo singolo di: ${song.artist.name}</h4>
-	<input onclick="cercaMp3(${song.id})" type="button" value="PLAY">
-	<input type="button" value="SALVA">
-	<img src="${song.album.cover_medium}" alt="" srcset="">
+
+	homesponsor.innerHTML = `<img class="img-fluid "src="${song.album.cover_medium}" alt="" srcset="">
+	<div class="p-3 d-flex flex-column justify-content-between ">
+		<h4>ALBUM</h4>
+		<h1 onclick="cercaMp3(${song.id})">${song.title}</h1>
+		<h4 onclick="cercaArtista(${song.artist.id})">${song.artist.name}</h4>
+		<h4>Ascolta il nuovo singolo di: ${song.artist.name}</h4>
+		<div>
+			<input class=" text-white bottoneSponsored " onclick="cercaMp3(${song.id})" type="button" value="Play">
+			<input class=" text-white bottoneSponsored" type="button" value="Salva">
+			<img src="" alt="" srcset="">
+		</div>
+	</div>
+	
 	`
 	console.log(song)
 
 	await playlistPopola();
+
 }
 
 //manca la funzione che rende maiuscola la prima lettera del titolo della playlist
@@ -117,8 +126,6 @@ function aggiungiClickPlaylist() {
 aggiungiClickPlaylist();
 popolaSection();
 
-/*let numPlaylist = 108243;
-let urlApi = "https://deezerdevs-deezer.p.rapidapi.com/";*/
 
 async function caricaPlaylist(numPlaylist) {
 	svuotaHome();
@@ -153,12 +160,6 @@ function displayTitoli(items) {
 	displayTracks(playlist, "playlist");
 }
 
-function displayTracks(playlist, checkType) {
-	let playlistWrapper = document.getElementById("playlist");
-	let albumWrapper = document.getElementById("canzoniAlbum")
-	playlistWrapper.innerHTML = ""
-	albumWrapper.innerHTML = ""
-}
 
 async function cercaAlbum(Album) {
 	let titoliWrapper = document.getElementById("titoliAlbum");
@@ -204,14 +205,13 @@ function displayTracks(playlist, checkType) {
           </div>
 		  
             <div class="col-4">
-              <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${song.title
-				}</h3>
-              <h3 onclick="cercaArtista(${song.artist.id
-				})" class="fs-6 fw-light">${song.artist.name}</h3>
+
+              <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${song.title}</h3>
+              <h3 onclick="cercaArtista(${song.artist.id})" class="fs-6 fw-light">${song.artist.name}</h3>
             </div>
             <div class="col-3">
-              <p onclick="cercaAlbum(${song.album.id
-				})" class="h5 text-center ">${song.album.title}</p>
+              <p onclick="cercaAlbum(${song.album.id})" class="h5 text-center ">${song.album.title}</p>
+
             </div>
             <div class="col-3">
               <p class="h5 text-center">${numeroAscoltoRandom}</p>
@@ -221,19 +221,20 @@ function displayTracks(playlist, checkType) {
               <p class="h5 text-center">${minutaggio(song.duration)}</p>
            </div>
     	`;
-		i++
-});
+
+			i++
+		});
+
 
 	} else if (checkType == "album") {
 		playlist.tracks.data.forEach(song => {
 			albumWrapper.innerHTML += `
 
-				 <div class="row my-3">
-				<div class="col-4">
-				  <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${song.title
-				}</h3>
-				  <h3 onclick="cercaArtista(${song.artist.id
-				})" class="fs-6 fw-light">${song.artist.name}</h3>
+				 <div class="d-flex justify-content-between row my-3">
+				 <div class="col-4">
+				  <h3 onclick="cercaMp3(${song.id})" class="fs-5 fw-bold">${song.title}</h3>
+				  <h3 onclick="cercaArtista(${song.artist.id})" class="fs-6 fw-light">${song.artist.name}</h3>
+
 				</div>
 				
 				<div class="col-3">
@@ -242,6 +243,7 @@ function displayTracks(playlist, checkType) {
 				
 				<div class="col-1">
 				  <p class="h5 text-center">${minutaggio(song.duration)}</p>
+			   </div>
 			   </div>
 			`;
 
@@ -385,7 +387,9 @@ async function getAlbumsByArtist(artistId) {
 	}
 }
 
+
 //questa è la funzione che prende l'id artista e lo popola con le 5 canzoni e gli album correlati ^_^
+
 async function cercaArtista(id) {
 	svuotaHome()
 	document.getElementById("artist").classList.remove("d-none")
@@ -452,10 +456,10 @@ async function cercaArtista(id) {
 	const albumsElement = document.getElementById("albums-container")
 	if (albumsElement) {
 		albumsElement.innerHTML = ""
-		albums.slice(0, 6).forEach(album => {
+		albums.slice(0, 4).forEach(album => {
 			let albumYear = album.release_date.split("-")[0]
 			let albumDiv = document.createElement("div")
-			albumDiv.classList.add("col-sm-6", "col-md-4", "col-lg-2")
+			albumDiv.classList.add("col-sm-6", "col-md-4", "col-lg-3")
 
 			albumDiv.innerHTML = `
 
@@ -482,6 +486,7 @@ function formCerca() {
 	containerPlaylist.classList.add("d-none")
 	containerSearch.classList.remove("d-none")
 	document.getElementById("artistForm").addEventListener("submit", async function (event) {
+
 
 		event.preventDefault();
 		let artistName = cleanArtistName();

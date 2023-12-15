@@ -1,22 +1,23 @@
 /* HEADER */
 #header {
-    margin-left: 200px;
-    margin-right: 200px;
-    z-index: 1000;
+
+    
+    margin-left: 246px;
+    z-index: 2;
+    max-width: 833px;
+
     background-color: #000000;
 }
 
 #header ul,
 #header li {
     list-style-type: none;
-    z-index: 1001;
+
+    z-index: 1000000005;
 }
 
-#homepage,
-#albumplaylist {
-    margin-left: 15px;
-    margin-top: 49px;
-}
+
+
 
 #profileBg {
     border-radius: 20px;
@@ -25,18 +26,6 @@
 }
 
 /*basta*/
-#hero {
-    background: rgb(40, 159, 15);
-    background: linear-gradient(
-        180deg,
-        rgba(39, 159, 15, 0.4) 0%,
-        rgba(18, 18, 18, 1) 90%
-    );
-}
-
-#albumplaylist {
-    padding-left: 180px;
-}
 
 #playlistWrapper {
     background: rgba(18, 18, 18, 1);
@@ -45,3 +34,18 @@
 .icon:hover {
     color: white;
 }
+
+.icon {
+    color: rgb(197, 197, 197);
+}
+#albumplaylist h3 {
+    font-size: 16px;
+}
+#playlist h3 {
+    font-size: 16px;
+}
+#playlist p {
+    font-size: 16px;
+}
+
+
