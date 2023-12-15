@@ -27,6 +27,8 @@
     <script src="https://kit.fontawesome.com/311c941856.js" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="assets/css/style-index.css">
     <link rel="stylesheet" href="assets/css/artist.css">
+
+    <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/search.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
 
@@ -154,9 +156,9 @@
             </ul>
         </div>
     </div>
-  
+
     <div class="wrapper">
-        <div class="sidebar-wrapper ResponsiveMobile" >
+        <div class="sidebar-wrapper ResponsiveMobile">
             <ul>
                 <li>
                     <a href="#">Attività amici</a>
@@ -207,6 +209,35 @@
                         <span class="status"><i class="fa-brands fa-itunes-note"></i>Never Gonna Give You Up</span>
                     </li>
                 </ul>
+            </div>
+        </div>
+
+        <div id="header" class="d-flex justify-content-between align-items-center pe-2 fixed-top">
+            <div>
+                <i class="bi bi-arrow-left-circle h1 text-white"></i>
+                <i class="bi bi-arrow-right-circle h1 text-white"></i>
+            </div>
+
+            <div id="profileBg" class="d-flex bg-secondary">
+                <li class="nav-item dropdown text-white d-flex align-items-center">
+                    <img src="assets/imgs/meme_this_is_fine_dog.png" width="32" alt="" class="me-2">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Nome
+                        Utente</a>
+
+                    <ul class="dropdown-menu text-white bg-secondary">
+                        <li class="d-flex justify-content-between"><a class="dropdown-item text-white "
+                                href="#">Account</a> <i class="bi bi-box-arrow-up-right"></i></li>
+                        <li><a class="dropdown-item text-white " href="#">Profilo</a></li>
+                        <li class="d-flex justify-content-between"><a class="dropdown-item text-white "
+                                href="#">Effettua
+                                l'upgrade a Premium</a> <i class="bi bi-box-arrow-up-right"></i></li>
+                        <li><a class="dropdown-item text-white " href="#">Sessione privata</a></li>
+                        <li><a class="dropdown-item text-white " href="#">Impostazioni</a></li>
+                        <hr>
+                        <li><a class="dropdown-item text-white " href="#">Esci</a></li>
+                    </ul>
+                </li>
             </div>
         </div>
 
@@ -488,8 +519,9 @@
                 </div>
 
                 <div class="row border-bottom border-white px-4">
-                    <h3 class="col-4"># TITOLO</h3>
-                    <h3 id="Albumdel" class="col-4 text-center">ALBUM</h3>
+                    <h3 class="col-1">#</h3>
+                    <h3 class="col-4">TITOLO</h3>
+                    <h3 id="Albumdel" class="col-3 text-center">ALBUM</h3>
                     <h3 class="col-3 text-center">RIPRODUZIONI</h3>
                     <h3 class="col-1 text-center"><i class="bi bi-clock"></i></h3>
                 </div>
@@ -588,52 +620,50 @@
         <div id="search" class="d-none">
             <div>
                 <form id="artistForm">
-                    <i class="fa-solid fa-less-than"></i>
-                    <i class="fa-solid fa-greater-than"></i>
-                  <input type="text" id="artistName" required>
-                  <button type="submit">Cerca</button>
+                    <input type="text" id="artistName" required>
+                    <button type="submit">Cerca</button>
                 </form>
-              </div>
-            
-              <div>
-                <div id="navigationSearch">
-                  <p>Tutto</p>
-                  <p>Brani</p>
-                  <p>Artisti</p>
-                  <p>Playlist</p>
-                  <p>Album</p>
-                  <p>Podcast e show</p>
-                  <p>Profili</p>
-                </div>
-            
+            </div>
+
+            <div>
                 <div class="d-flex">
-            
-                  <div class="d-flex flex-column  w-50 ">
-                    <h3 class="d-none">Risultato più rilevante</h3>
-                    <div class="h-100  d-flex ">
-                      <div class="w-100 " id="artistInfo">
-            
-                        <div class="w-100" id="artistNameDisplay"></div>
-                      </div>
+                    <p>Tutto</p>
+                    <p>Brani</p>
+                    <p>Artisti</p>
+                    <p>Playlist</p>
+                    <p>Album</p>
+                    <p>Podcast e show</p>
+                    <p>Profili</p>
+                </div>
+
+                <div class="d-flex">
+
+                    <div class="d-flex flex-column  w-50 ">
+                        <h3 class="d-none">Risultato più rilevante</h3>
+                        <div class="h-100  d-flex ">
+                            <div class="w-100 " id="artistInfo">
+
+                                <div class="w-100" id="artistNameDisplay"></div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="w-50 ">
-                    <h3 class="d-none">Brani</h3>
-                    <div>
-            
-                      <ul id="songsList">
-                      </ul>
+                    <div class="w-50 ">
+                        <h3 class="d-none">Brani</h3>
+                        <div>
+
+                            <ul id="songsList">
+                            </ul>
+                        </div>
                     </div>
-                  </div>
                 </div>
             </div>
-            
-            
-            
-            
-                <div id="albumListWrapper" class="row justify-content-center align-items-center g-2">
-                  
-                </div>
+
+
+
+
+            <div id="albumListWrapper" class="row justify-content-center align-items-center g-2">
+
+            </div>
         </div>
 
         <footer class="position-relative ResponsiveMobile">
@@ -683,8 +713,20 @@
 
             </div>
         </footer>
-        <footer id="footerMobile"></footer>
+
+        <footer id="footerMobile">
+            <div class="container">
+                <div class="row">
+                    <div class="col"><a href="">Home</a></div>
+                    <div class="col"><a href="">Search</a></div>
+                    <div class="col"><a href="">Library</a></div>
+                </div>
+            </div>
+        </footer>
+
     </div>
+
+   
 </body>
 
 </html>
