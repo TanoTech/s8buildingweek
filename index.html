@@ -586,56 +586,59 @@
         </div>
 
         <div id="search" class="d-none">
-            <div>
+            <div id="headerSearch">
                 <form id="artistForm">
                     <i class="fa-solid fa-less-than"></i>
                     <i class="fa-solid fa-greater-than"></i>
-                  <input type="text" id="artistName" required>
+                  <input placeholder="Cosa vuoi ascoltare?" type="text" id="artistName" required onClick="document.getElementById('Search').style.display = 'none';">
                   <button type="submit">Cerca</button>
                 </form>
               </div>
             
-              <div>
-                <div id="navigationSearch">
-                  <p>Tutto</p>
-                  <p>Brani</p>
-                  <p>Artisti</p>
-                  <p>Playlist</p>
-                  <p>Album</p>
-                  <p>Podcast e show</p>
-                  <p>Profili</p>
-                </div>
-            
-                <div class="d-flex">
-            
-                  <div class="d-flex flex-column  w-50 ">
-                    <h3 class="d-none">Risultato più rilevante</h3>
-                    <div class="h-100  d-flex ">
-                      <div class="w-100 " id="artistInfo">
-            
-                        <div class="w-100" id="artistNameDisplay"></div>
+              
+                <div id="Search">
+                    <div id="divPrincipale">
+                        <div>
+                            <div id="navigationSearch">
+                              <p>Tutto</p>
+                              <p>Brani</p>
+                              <p>Artisti</p>
+                              <p>Playlist</p>
+                              <p>Album</p>
+                              <p>Podcast e show</p>
+                              <p>Profili</p>
+                            </div>
+                        
+                            <div class="d-flex">
+                        
+                              <div class="d-flex flex-column  w-50 ">
+                                <h3 class="risultato">Risultato più rilevante</h3>
+                                <div class="artista">
+                                  <div class="w-100 " id="artistInfo">
+                        
+                                    <div class="w-100" id="artistNameDisplay"></div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                      <div class="listaCanzoni ">
+                        <h3 class="brani">Brani</h3>
+                        <div>
+                
+                          <ul id="songsList">
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="w-50 ">
-                    <h3 class="d-none">Brani</h3>
-                    <div>
-            
-                      <ul id="songsList">
-                      </ul>
+                </div>
+                    <div class="listaAlbum">
+                        <p id="con">Con</p>
+                        <div id="albumListWrapper" class="row justify-content-center align-items-center g-2">
+                      </div>
                     </div>
-                  </div>
+    
                 </div>
-            </div>
-            
-            
-            
-            
-                <div id="albumListWrapper" class="row justify-content-center align-items-center g-2">
-                  
-                </div>
-        </div>
-
         <footer class="position-relative ResponsiveMobile">
             <div style="display: none;">
                 <audio controls id="player">

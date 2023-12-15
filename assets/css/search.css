@@ -1,3 +1,7 @@
+body{
+    background-color: #121212;
+}
+
 #artistName{
     border-radius: 20px;
     background: #242424;
@@ -31,4 +35,106 @@
     color: aliceblue;
     margin-left: 1.3rem;
     font-size: 0.7rem;
+}
+
+.risultato{
+    color: white;
+    font-size: 0.8rem;
+    margin-left: 25px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#divPrincipale{
+    display: flex;
+    background-color: #121212;
+    margin-top: 5px;
+}
+
+.artista{
+    background-color: #181818;
+    width: 17rem;
+}
+
+.artista img{
+    margin-left: 25px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.artista h2{
+    color: white;
+    margin-left: 25px;
+    margin-top: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.artista p{
+    color: white;
+    margin-left: 25px;
+    margin-top: 5px;
+    font-size: 0.5rem;
+}
+
+.brani{
+    color: white;
+    font-size: 0.8rem;
+    margin-top: 45px;
+    font-weight: bold;
+}
+
+#songsList{
+    color: white;
+    font-size: 0.4rem;
+}
+
+#songsList img{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.card{
+    width: 7rem;
+    background-color: #181818;
+    color: white;
+    
+}
+
+.listaAlbum{
+    background-color: #121212;
+}
+
+.listaAlbum p{
+    font-size: 0.5rem;
+}
+
+.listaAlbum h4{
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+#con{
+    color: white;
+    margin-left: 13.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#headerSearch{
+    background-color: black;
+    padding-bottom: 5px;
+}
+
+#albumListWrapper{
+    width: 67rem;
+}
+
+input::placeholder{
+    font-size: 0.7rem;
+    padding-left: 7px;
+
 }
