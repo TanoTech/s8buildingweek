@@ -220,7 +220,10 @@ ul {
 #album,
 #search,
 #artist {
-	padding-left: 190px;
+    padding-left: 210px;
+    max-width: 1070px;
+    margin-bottom: 110px;
+    padding-right: 20px;
 }
 
 footer {
