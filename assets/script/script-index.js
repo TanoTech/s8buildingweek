@@ -482,21 +482,22 @@ async function cercaArtista(id) {
 }
 
 function formCerca() {
-	container.classList.add("d-none");
-	containerAlbum.classList.add("d-none");
-	containerArtist.classList.add("d-none");
-	containerPlaylist.classList.add("d-none");
-	containerSearch.classList.remove("d-none");
-	document
-		.getElementById("artistForm")
-		.addEventListener("submit", async function (event) {
-			event.preventDefault();
-			let artistName = cleanArtistName();
-			let data = await renderApi("search?q=" + artistName);
-			let dataArtist = data.data[0].artist;
-			getArtistInfo(dataArtist, data);
-			document.getElementById("artistName").value = "";
-		});
+
+	container.classList.add("d-none")
+	containerAlbum.classList.add("d-none")
+	containerArtist.classList.add("d-none")
+	containerPlaylist.classList.add("d-none")
+	containerSearch.classList.remove("d-none")
+	document.getElementById("artistForm").addEventListener("submit", async function (event) {
+
+		event.preventDefault();
+		let artistName = cleanArtistName();
+		let data = await renderApi("search?q=" + artistName);
+		let dataArtist = data.data[0].artist
+		getArtistInfo(dataArtist, data);
+		document.getElementById("artistName").value = ""
+	});
+
 }
 
 function cleanArtistName() {
