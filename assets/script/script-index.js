@@ -483,8 +483,6 @@ function formCerca() {
 	containerSearch.classList.remove("d-none")
 	document.getElementById("artistForm").addEventListener("submit", async function (event) {
 
-
-
 		event.preventDefault();
 		let artistName = cleanArtistName();
 		let data = await renderApi("search?q=" + artistName);
