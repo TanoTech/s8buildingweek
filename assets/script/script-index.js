@@ -389,7 +389,7 @@ async function getAlbumsByArtist(artistId) {
 	}
 }
 
-//questa è la funzione che prende l'id artista e lo popola con le 5 canzoni e gli album
+//questa è la funzione che prende l'id artista e lo popola con le 5 canzoni e gli album correlati, molto fiero ^_^
 async function cercaArtista(id) {
 	svuotaHome();
 	document.getElementById("artist").classList.remove("d-none");
