@@ -1,8 +1,3 @@
-body{
-    font-family: "Montserrat", sans-serif;
-    background-color: #090909;
-}
-
 #artistName{
     border-radius: 20px;
     background: #242424;
@@ -36,17 +31,4 @@ body{
     color: aliceblue;
     margin-left: 1.3rem;
     font-size: 0.7rem;
-}
-
-#risultati{
-    color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-left: 25px;
-    margin-top: 10px;
-}
-
-#divPrincipale{
-    background-color: #121212;
-    display: flex;
 }
